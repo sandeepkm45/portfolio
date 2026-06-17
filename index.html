@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sandeep Kumar Mishra — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ══════════════ PRELOADER ══════════════ -->
+<div id="preloader">
+  <div class="pl-inner">
+    <div class="pl-logo">Sandeep</div>
+    <div class="pl-bar"><div class="pl-fill"></div></div>
+  </div>
+</div>
+
+<!-- ══════════════ BACK TO TOP ══════════════ -->
+<button id="backToTop" aria-label="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- ══════════════ SCROLL PROGRESS ══════════════ -->
+<div id="scrollProgress"></div>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">
+    <span class="monogram">SK</span>
+    Sandeep
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact" class="nav-cta">Say Hello →</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" id="mobClose"><i class="fas fa-times"></i></button>
+  <a href="#about"     class="ml">About</a>
+  <a href="#education" class="ml">Education</a>
+  <a href="#projects"  class="ml">Projects</a>
+  <a href="#skills"    class="ml">Skills</a>
+  <a href="#contact"   class="ml">Contact</a>
+</div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero" id="home">
+  <canvas id="particleCanvas" class="hero-canvas"></canvas>
+
+  <div class="hero-grid">
+    <!-- LEFT -->
+    <div class="hero-content">
+      <p class="eyebrow">
+        <span class="eyebrow-line"></span>
+        <span class="typed-text"></span>
+      </p>
+      <h1>
+        Hi, I'm<br>
+        <span class="accent">Sandeep</span><br>
+        <span class="h1-sub">Kumar Mishra</span>
+      </h1>
+      <p class="hero-bio">
+        A B.Tech student at JIIT Noida who loves turning ideas into real things — from robots that dodge obstacles to hackathon platforms shipped overnight. Always curious, always building.
+      </p>
+      <div class="btn-row">
+        <a href="#projects" class="btn btn-fill"><i class="fas fa-code"></i> Explore my work</a>
+        <a href="#contact"  class="btn btn-outline"><i class="fas fa-paper-plane"></i> Let's connect</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num" data-target="9.03" data-decimal="2">0</span>
+          <span class="stat-lbl">CGPA / 10</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="4" data-suffix="+">0</span>
+          <span class="stat-lbl">Projects Built</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat-item">
+          <span class="stat-num stat-plain">μCR</span>
+          <span class="stat-lbl">Robotics Club</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Profile Photo -->
+    <div class="hero-photo">
+      <div class="photo-wrapper">
+        <div class="photo-ring ring-a"></div>
+        <div class="photo-ring ring-b"></div>
+        <div class="photo-frame">
+          <!-- ▼▼▼ Place sandeep.jpeg in the same folder as this file ▼▼▼ -->
+          <img
+            src="sandeep.jpeg"
+            alt="Sandeep Kumar Mishra"
+            class="photo-img"
+            onerror="this.style.display='none';document.getElementById('photoFallback').style.display='flex';"
+          />
+          <div class="photo-fallback" id="photoFallback">
+            <span class="fb-initials">SK</span>
+            <p class="fb-hint"><i class="fas fa-image"></i><br>Add <strong>sandeep.jpeg</strong><br>to this folder</p>
+          </div>
+        </div>
+        <!-- Floating badges -->
+        <div class="hero-badge badge-tl">
+          <i class="fas fa-microchip"></i>
+          <span>ECE @ JIIT</span>
+        </div>
+        <div class="hero-badge badge-br">
+          <span class="badge-num">9.03</span>
+          <span class="badge-cap">CGPA</span>
+        </div>
+        <!-- Decorative dots -->
+        <div class="deco-dots">
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-cue">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ══════════════ ABOUT ══════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="eyebrow-line"></span>Who I Am</p>
+      <h2 class="sec-title">A curious mind,<br>always building</h2>
+    </div>
+    <div class="about-grid">
+      <!-- Bio -->
+      <div class="about-body reveal">
+        <p>Hello! I'm Sandeep — a B.Tech student in Electronics &amp; Communication Engineering at JIIT Noida, maintaining a CGPA of 9.03. I have a genuine passion for the full spectrum of engineering: from designing circuits in Proteus and writing embedded C to building terminal apps and crafting web interfaces.</p>
+        <p>I believe the best way to learn is to build, break things, and rebuild them better. That philosophy has taken me from blinking LEDs on an Arduino to programming obstacle-avoiding robots, from SQL-powered travel planners to hackathon-born freelancing platforms.</p>
+        <p>When I step away from the desk, you'll find me on the cricket field — where the same values of patience, teamwork, and reading the situation apply just as much as they do in engineering.</p>
+        <div class="tag-row">
+          <span class="chip">Embedded Systems</span>
+          <span class="chip">Signal Processing</span>
+          <span class="chip">Circuit Design</span>
+          <span class="chip">Software Development</span>
+          <span class="chip">Open to Internships 🚀</span>
+          <span class="chip">Cricket Lover 🏏</span>
+        </div>
+        <div class="about-btns">
+          <a href="Resume.pdf" download class="btn btn-fill btn-sm"><i class="fas fa-download"></i> Download CV</a>
+          <a href="#contact" class="btn btn-terra-ghost btn-sm"><i class="fas fa-envelope"></i> Get in Touch</a>
+        </div>
+      </div>
+
+      <!-- Mac Terminal Card -->
+      <div class="terminal-card reveal reveal-d1">
+        <div class="terminal-bar">
+          <div class="t-dots">
+            <span class="td td-r"></span>
+            <span class="td td-y"></span>
+            <span class="td td-g"></span>
+          </div>
+          <span class="t-title">sandeep@jiit ~ zsh</span>
+        </div>
+        <div class="terminal-body">
+          <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">whoami</span></div>
+          <div class="t-line t-out"><span class="t-k">Name    </span><span class="t-v">Sandeep Kumar Mishra</span></div>
+          <div class="t-line t-out"><span class="t-k">Role    </span><span class="t-v">ECE Student · JIIT Noida</span></div>
+          <div class="t-line t-out"><span class="t-k">CGPA    </span><span class="t-v t-accent">9.03 / 10.0</span></div>
+          <div class="t-line t-out"><span class="t-k">Batch   </span><span class="t-v">2024 – 2028</span></div>
+          <div class="t-blank"></div>
+          <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">ls activities/</span></div>
+          <div class="t-line t-out t-dir">μCR_Robotics/&nbsp;&nbsp;BitBox_5.0/&nbsp;&nbsp;Cricket/</div>
+          <div class="t-blank"></div>
+          <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">echo $STATUS</span></div>
+          <div class="t-line t-out"><span class="t-open">✦ Open to Internships</span></div>
+          <div class="t-blank"></div>
+          <div class="t-line"><span class="t-prompt">❯</span><span class="t-cursor">█</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ EDUCATION ══════════════ -->
+<section id="education">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="eyebrow-line"></span>Academic Journey</p>
+      <h2 class="sec-title">Education &amp; Coursework</h2>
+      <p class="sec-sub">A strong academic foundation combined with a hunger for hands-on learning that goes well beyond the classroom.</p>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-accent"></div>
+        <div class="edu-top">
+          <span class="edu-year">2024 – 2028</span>
+          <span class="edu-score">9.03 <small>/ 10 CGPA</small></span>
+        </div>
+        <h3>B.Tech — Electronics &amp; Communication Engineering (ACT)</h3>
+        <p class="edu-inst"><i class="fas fa-university"></i> Jaypee Institute of Information Technology (JIIT), Noida</p>
+        <div class="course-pills">
+          <span class="cpill">Telecom Engineering</span>
+          <span class="cpill">Digital Signal Processing</span>
+          <span class="cpill">Analog &amp; Digital Comm.</span>
+          <span class="cpill">Artificial Intelligence</span>
+          <span class="cpill">Signals &amp; Systems</span>
+          <span class="cpill">Linear Algebra</span>
+          <span class="cpill">Financial Accounting</span>
+        </div>
+      </div>
+      <div class="edu-card reveal reveal-d1">
+        <div class="edu-accent"></div>
+        <div class="edu-top">
+          <span class="edu-year">April 2024</span>
+        </div>
+        <h3>Senior Secondary &amp; Secondary Education</h3>
+        <p class="edu-inst"><i class="fas fa-school"></i> Kendriya Vidyalaya, Noida</p>
+        <div class="score-pair">
+          <div class="score-block">
+            <span class="score-n">86%</span>
+            <span class="score-l">Class 12th</span>
+          </div>
+          <div class="score-block">
+            <span class="score-n">89.5%</span>
+            <span class="score-l">Class 10th</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PROJECTS ══════════════ -->
+<section id="projects">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="eyebrow-line"></span>What I've Built</p>
+      <h2 class="sec-title">Projects &amp; Work</h2>
+      <p class="sec-sub">A selection of things I've built, shipped, and learned from — spanning hardware, software, and everything in between.</p>
+    </div>
+    <div class="proj-grid">
+
+      <!-- Featured: Arduino -->
+      <div class="proj-card proj-featured reveal">
+        <div class="proj-content">
+          <div class="proj-hdr">
+            <span class="badge b-hw"><i class="fas fa-microchip"></i> Hardware</span>
+            <a href="#" class="proj-link-ico" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+          <h3>Arduino-Based Embedded Systems</h3>
+          <p>A hands-on series of embedded projects: an obstacle-avoidance robot, a real-time temperature monitor, and LED control circuits — powered by ultrasonic, LM35, and IR sensors doing real-time data processing.</p>
+          <div class="tech-row">
+            <span class="tpill">Arduino</span><span class="tpill">C / C++</span>
+            <span class="tpill">Ultrasonic</span><span class="tpill">LM35</span>
+            <span class="tpill">IR Module</span><span class="tpill">Proteus</span>
+          </div>
+        </div>
+        <div class="proj-visual">
+          <span class="proj-emoji">🤖</span>
+        </div>
+      </div>
+
+      <!-- Plan My Journey -->
+      <div class="proj-card reveal">
+        <div class="proj-hdr">
+          <span class="badge b-sw"><i class="fas fa-terminal"></i> Software</span>
+          <a href="#" class="proj-link-ico" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+        <h3>Plan My Journey</h3>
+        <p>A terminal-based travel planner in C++ with a MySQL backend. Users manage routes, destinations, and trip details with full database persistence — clean, fast, no-frills.</p>
+        <div class="tech-row">
+          <span class="tpill">C++</span><span class="tpill">MySQL</span><span class="tpill">CLI</span>
+        </div>
+      </div>
+
+      <!-- Accounting App -->
+      <div class="proj-card reveal reveal-d1">
+        <div class="proj-hdr">
+          <span class="badge b-wip"><i class="fas fa-spinner fa-spin"></i> In Progress</span>
+        </div>
+        <h3>Accounting Application</h3>
+        <p>Making financial record-keeping approachable for everyone. Automatically generates Journal Entries, Ledgers, and Trial Balances — turning complex accounting into a smooth workflow.</p>
+        <div class="tech-row">
+          <span class="tpill">In Development</span><span class="tpill">Finance Logic</span>
+        </div>
+      </div>
+
+      <!-- Hackathon -->
+      <div class="proj-card proj-wide reveal">
+        <div class="proj-hdr">
+          <span class="badge b-hk"><i class="fas fa-trophy"></i> Hackathon · BitBox 5.0</span>
+          <a href="#" class="proj-link-ico" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <h3>Freelancing Platform</h3>
+        <p>Built collaboratively at the BitBox 5.0 Hackathon — a fully functional freelancing website designed and shipped under real time pressure. A great lesson in teamwork, speed, and deciding what to cut when the clock is ticking.</p>
+        <div class="tech-row">
+          <span class="tpill">HTML / CSS</span><span class="tpill">JavaScript</span>
+          <span class="tpill">Rapid Prototyping</span><span class="tpill">Teamwork</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SKILLS ══════════════ -->
+<section id="skills">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="eyebrow-line"></span>What I Work With</p>
+      <h2 class="sec-title">Skills &amp; Tools</h2>
+      <p class="sec-sub">A growing toolkit that bridges the gap between hardware and software.</p>
+    </div>
+
+    <div class="skills-layout">
+      <!-- Grid of skill cards -->
+      <div class="skills-grid">
+
+        <div class="skill-card reveal" data-tip="Systems & Embedded">
+          <div class="sk-icon-wrap sk-cpp"><i class="fas fa-code"></i></div>
+          <p class="sk-name">C / C++</p>
+          <p class="sk-cat">Systems &amp; Embedded</p>
+        </div>
+
+        <div class="skill-card reveal reveal-d1" data-tip="Scripting & AI/ML">
+          <div class="sk-icon-wrap sk-python"><i class="fab fa-python"></i></div>
+          <p class="sk-name">Python</p>
+          <p class="sk-cat">Scripting &amp; AI/ML</p>
+        </div>
+
+        <div class="skill-card reveal reveal-d2" data-tip="Frontend Web">
+          <div class="sk-icon-wrap sk-html"><i class="fab fa-html5"></i></div>
+          <p class="sk-name">HTML / CSS</p>
+          <p class="sk-cat">Frontend Web</p>
+        </div>
+
+        <div class="skill-card reveal reveal-d3" data-tip="Interactivity & Logic">
+          <div class="sk-icon-wrap sk-js"><i class="fab fa-js"></i></div>
+          <p class="sk-name">JavaScript</p>
+          <p class="sk-cat">Interactivity</p>
+        </div>
+
+        <div class="skill-card reveal" data-tip="Signal Processing & Modelling">
+          <div class="sk-icon-wrap sk-matlab"><i class="fas fa-wave-square"></i></div>
+          <p class="sk-name">MATLAB</p>
+          <p class="sk-cat">Signal Processing</p>
+        </div>
+
+        <div class="skill-card reveal reveal-d1" data-tip="Circuit Simulation">
+          <div class="sk-icon-wrap sk-proteus"><i class="fas fa-microchip"></i></div>
+          <p class="sk-name">Proteus</p>
+          <p class="sk-cat">Circuit Simulation</p>
+        </div>
+
+        <div class="skill-card reveal reveal-d2" data-tip="Machine Learning Basics">
+          <div class="sk-icon-wrap sk-ai"><i class="fas fa-brain"></i></div>
+          <p class="sk-name">AI / ML</p>
+          <p class="sk-cat">Machine Learning</p>
+        </div>
+
+        <div class="skill-card reveal reveal-d3" data-tip="Relational Databases">
+          <div class="sk-icon-wrap sk-mysql"><i class="fas fa-database"></i></div>
+          <p class="sk-name">MySQL</p>
+          <p class="sk-cat">Databases</p>
+        </div>
+
+      </div>
+
+      <!-- Side info panels -->
+      <div class="skills-aside">
+        <div class="aside-block reveal">
+          <h4><i class="fas fa-compass"></i> Areas of Interest</h4>
+          <ul>
+            <li>Embedded Systems</li>
+            <li>Signal Processing</li>
+            <li>Software Development</li>
+            <li>Circuit Design</li>
+          </ul>
+        </div>
+        <div class="aside-block reveal reveal-d2">
+          <h4><i class="fas fa-star"></i> Activities</h4>
+          <ul>
+            <li>Campus Robotics Club (μCR)</li>
+            <li>BitBox 5.0 Hackathon</li>
+            <li>Cricket Enthusiast 🏏</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CONTACT ══════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner reveal">
+      <p class="eyebrow eyebrow-center eyebrow-light">
+        <span class="eyebrow-line"></span>Let's Talk<span class="eyebrow-line"></span>
+      </p>
+      <h2 class="sec-title sec-title-light">Open to opportunities &amp;<br>interesting conversations</h2>
+      <p class="contact-sub">Whether you have a project idea, an internship opportunity, or just want to say hello — I'd love to hear from you. My inbox is always open!</p>
+      <div class="contact-links">
+        <a href="mailto:sandeep28092006@gmail.com" class="clink clink-fill">
+          <i class="fas fa-envelope"></i> Send an Email
+        </a>
+        <a href="https://www.linkedin.com/in/sandeep-kumar-mishra-7628b6308/" target="_blank" class="clink clink-ghost">
+          <i class="fab fa-linkedin-in"></i> LinkedIn
+        </a>
+        <a href="https://github.com/sandeepkm45" target="_blank" class="clink clink-ghost">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="tel:+918076333070" class="clink clink-ghost">
+          <i class="fas fa-phone"></i> +91 8076333070
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <p>© 2025 <span class="f-accent">Sandeep Kumar Mishra</span>. Crafted with curiosity.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
