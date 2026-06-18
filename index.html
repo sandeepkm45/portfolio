@@ -3,40 +3,93 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sandeep Kumar Mishra — Portfolio</title>
+  <title>Sandeep Kumar Mishra — san.dev</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<!--  PRELOADER  -->
-<!-- <div id="preloader">
-  <div class="pl-inner">
-    <div class="pl-logo">Sandeep</div>
-    <div class="pl-bar"><div class="pl-fill"></div></div>
+<!-- SCROLL PROGRESS -->
+<div id="scrollProgress"></div>
+
+<!-- ═══════════════════════════════════════════
+     PRELOADER  —  <San.Dev/>
+═══════════════════════════════════════════ -->
+<div id="preloader">
+  <div class="pl-grid-bg"></div>
+  <div class="pl-scan"></div>
+  <div class="pl-corner pl-tl"></div>
+  <div class="pl-corner pl-tr"></div>
+  <div class="pl-corner pl-bl"></div>
+  <div class="pl-corner pl-br"></div>
+
+  <div class="pl-content">
+    <!-- Brand tag -->
+    <div class="pl-brand-wrap">
+      <span class="pl-b pl-lt" id="plLt">&lt;</span><span class="pl-b pl-san" id="plSan">San</span><span class="pl-b pl-dot" id="plDot">.</span><span class="pl-b pl-dev" id="plDev">Dev</span><span class="pl-b pl-cl" id="plCl">/&gt;</span><span class="pl-cursor" id="plCursor">_</span>
+    </div>
+
+    <!-- Tagline -->
+    <p class="pl-tagline" id="plTagline">ECE &nbsp;·&nbsp; Developer &nbsp;·&nbsp; Maker</p>
+
+    <!-- Progress -->
+    <div class="pl-bar-wrap" id="plBarWrap">
+      <div class="pl-bar-track">
+        <div class="pl-bar-fill" id="plFill"></div>
+        <div class="pl-bar-shine"></div>
+      </div>
+      <div class="pl-bar-labels">
+        <span class="pl-pct" id="plPct">0%</span>
+        <span class="pl-status" id="plStatus">Initializing…</span>
+      </div>
+    </div>
   </div>
-</div> -->
 
-<!--  BACK TO TOP  -->
-<button id="backToTop" aria-label="Back to top">
-  <i class="fas fa-arrow-up"></i>
-</button>
+  <!-- Decorative floating tags -->
+  <div class="pl-float-tag pl-ft1"><span class="pft-dim">const </span><span class="pft-var">cgpa</span><span class="pft-dim"> = </span><span class="pft-num">9.03</span></div>
+  <div class="pl-float-tag pl-ft2"><span class="pft-dim">&lt;!-- </span><span class="pft-cmt">ECE @ JIIT</span><span class="pft-dim"> --&gt;</span></div>
+  <div class="pl-float-tag pl-ft3"><span class="pft-fn">import</span><span class="pft-dim"> curiosity</span></div>
+  <div class="pl-float-tag pl-ft4"><span class="pft-dim">$ </span><span class="pft-var">git push</span><span class="pft-dim"> origin</span></div>
+</div>
 
-<!--  NAVBAR  -->
+<!-- ═══════════════════════════════════════════
+     SECTION DOTS
+═══════════════════════════════════════════ -->
+<nav class="sec-dots" id="secDots">
+  <a href="#home"      class="sd active" data-lbl="Home"></a>
+  <a href="#about"     class="sd"        data-lbl="About"></a>
+  <a href="#education" class="sd"        data-lbl="Education"></a>
+  <a href="#projects"  class="sd"        data-lbl="Projects"></a>
+  <a href="#skills"    class="sd"        data-lbl="Skills"></a>
+  <a href="#contact"   class="sd"        data-lbl="Contact"></a>
+</nav>
+
+<!-- FLOATING BADGE -->
+<div class="float-badge" id="floatBadge">
+  <span class="fb-pulse"></span>
+  <span>Open to Internships</span>
+  <button class="fb-x" id="fbX" aria-label="Dismiss">×</button>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- ═══════════════════════════════════════════
+     NAVBAR  —  light glass  ·  <san.dev/>
+═══════════════════════════════════════════ -->
 <nav id="navbar">
   <a href="#home" class="nav-logo">
-    <span class="monogram">S.M</span>
-    <!-- Sandeep -->
+    <span class="brand-code"><span class="bc-lt">&lt;</span><span class="bc-san">san</span><span class="bc-dot">.</span><span class="bc-dev">dev</span><span class="bc-sl">/&gt;</span></span>
   </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact" class="nav-cta">Say Hello →</a></li>
+    <li><a href="#contact" class="nav-cta">Say Hello</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -53,28 +106,19 @@
   <a href="#contact"   class="ml">Contact</a>
 </div>
 
-<!--  HERO  -->
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
 <section class="hero" id="home">
   <canvas id="particleCanvas" class="hero-canvas"></canvas>
-
   <div class="hero-grid">
-    <!-- LEFT -->
     <div class="hero-content">
-      <p class="eyebrow">
-        <span class="eyebrow-line"></span>
-        <span class="typed-text"></span>
-      </p>
-      <h1>
-        Hi, I'm<br>
-        <span class="accent">Sandeep</span><br>
-        <span class="h1-sub">Kumar Mishra</span>
-      </h1>
-      <p class="hero-bio">
-        A B.Tech student at JIIT Noida who loves turning ideas into real things — from robots that dodge obstacles to hackathon platforms shipped overnight. Always curious, always building.
-      </p>
+      <p class="eyebrow"><span class="eyebrow-line"></span><span class="typed-text"></span></p>
+      <h1>Hi, I'm<br><span class="accent">Sandeep</span><br><span class="h1-sub">Kumar Mishra</span></h1>
+      <p class="hero-bio">A B.Tech student at JIIT Noida who loves turning ideas into real things — from robots that dodge obstacles to hackathon platforms shipped overnight.</p>
       <div class="btn-row">
-        <a href="#projects" class="btn btn-fill"><i class="fas fa-code"></i> Explore my work</a>
-        <a href="#contact"  class="btn btn-outline"><i class="fas fa-paper-plane"></i> Let's connect</a>
+        <a href="#projects" class="btn btn-fill mag-btn"><i class="fas fa-code"></i> Explore my work</a>
+        <a href="#contact"  class="btn btn-outline mag-btn"><i class="fas fa-paper-plane"></i> Let's connect</a>
       </div>
       <div class="hero-stats">
         <div class="stat-item">
@@ -94,50 +138,33 @@
       </div>
     </div>
 
-    <!-- RIGHT: Profile Photo -->
     <div class="hero-photo">
       <div class="photo-wrapper">
         <div class="photo-ring ring-a"></div>
         <div class="photo-ring ring-b"></div>
         <div class="photo-frame">
-          <img
-            src="sandy.jpeg"
-            alt="Sandeep Kumar Mishra"
-            class="photo-img"
-            onerror="this.style.display='none';document.getElementById('photoFallback').style.display='flex';"
-          />
+          <img src="sandeep.jpeg" alt="Sandeep Kumar Mishra" class="photo-img"
+               onerror="this.style.display='none';document.getElementById('photoFallback').style.display='flex';"/>
           <div class="photo-fallback" id="photoFallback">
             <span class="fb-initials">SK</span>
-            <p class="fb-hint"><i class="fas fa-image"></i><br>Add <strong>sandeep.jpeg</strong><br>to this folder</p>
+            <p class="fb-hint"><i class="fas fa-image"></i><br>Add <strong>sandy.jpeg</strong></p>
           </div>
         </div>
-        <!-- Floating badges -->
-        <div class="hero-badge badge-tl">
-          <i class="fas fa-microchip"></i>
-          <span>ECE @ JIIT</span>
-        </div>
-        <div class="hero-badge badge-br">
-          <span class="badge-num">9.03</span>
-          <span class="badge-cap">CGPA</span>
-        </div>
-        <!-- Decorative dots -->
-        <div class="deco-dots">
-          <span></span><span></span><span></span>
-          <span></span><span></span><span></span>
-          <span></span><span></span><span></span>
-        </div>
+        <div class="hero-badge badge-tl"><i class="fas fa-microchip"></i><span>ECE @ JIIT</span></div>
+        <div class="hero-badge badge-br"><span class="badge-num">9.03</span><span class="badge-cap">CGPA</span></div>
+        <div class="deco-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
       </div>
     </div>
   </div>
-
-  <!-- Scroll indicator -->
   <div class="scroll-cue">
     <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
     <span>Scroll</span>
   </div>
 </section>
 
-<!--  ABOUT  -->
+<!-- ═══════════════════════════════════════════
+     ABOUT  —  3-column: bio | terminal | robot
+═══════════════════════════════════════════ -->
 <section id="about">
   <div class="container">
     <div class="sec-head reveal">
@@ -145,6 +172,7 @@
       <h2 class="sec-title">A curious mind,<br>always building</h2>
     </div>
     <div class="about-grid">
+
       <!-- Bio -->
       <div class="about-body reveal">
         <p>Hello! I'm Sandeep — a B.Tech student in Electronics &amp; Communication Engineering at JIIT Noida, maintaining a CGPA of 9.03. I have a genuine passion for the full spectrum of engineering: from designing circuits in Proteus and writing embedded C to building terminal apps and crafting web interfaces.</p>
@@ -154,7 +182,7 @@
           <span class="chip">Embedded Systems</span>
           <span class="chip">Signal Processing</span>
           <span class="chip">Circuit Design</span>
-          <span class="chip">Software Development</span>
+          <span class="chip">Software Dev</span>
           <span class="chip">Open to Internships 🚀</span>
           <span class="chip">Cricket Lover 🏏</span>
         </div>
@@ -164,37 +192,164 @@
         </div>
       </div>
 
-      <!-- Mac Terminal Card -->
-      <div class="terminal-card reveal reveal-d1">
-        <div class="terminal-bar">
-          <div class="t-dots">
-            <span class="td td-r"></span>
-            <span class="td td-y"></span>
-            <span class="td td-g"></span>
+      <!-- Terminal — STICKY -->
+      <div class="terminal-sticky-wrap">
+        <div class="terminal-card reveal reveal-d1">
+          <div class="terminal-bar">
+            <div class="t-dots">
+              <span class="td td-r"></span><span class="td td-y"></span><span class="td td-g"></span>
+            </div>
+            <span class="t-title">sandeep@jiit ~ zsh</span>
+            <span class="t-live"><span class="t-live-dot"></span>LIVE</span>
           </div>
-          <span class="t-title">sandeep@jiit ~ zsh</span>
+          <div class="terminal-body">
+            <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">whoami</span></div>
+            <div class="t-line t-out"><span class="t-k">Name  </span><span class="t-v">Sandeep Kumar Mishra</span></div>
+            <div class="t-line t-out"><span class="t-k">Role  </span><span class="t-v">ECE Student · JIIT Noida</span></div>
+            <div class="t-line t-out"><span class="t-k">CGPA  </span><span class="t-v t-accent">9.03 / 10.0</span></div>
+            <div class="t-line t-out"><span class="t-k">Batch </span><span class="t-v">2024 – 2028</span></div>
+            <div class="t-blank"></div>
+            <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">ls activities/</span></div>
+            <div class="t-line t-out t-dir">μCR_Robotics/&nbsp;&nbsp;BitBox_5.0/&nbsp;&nbsp;Cricket/</div>
+            <div class="t-blank"></div>
+            <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">date</span></div>
+            <div class="t-line t-out"><span class="t-v t-clock" id="termClock">--</span></div>
+            <div class="t-blank"></div>
+            <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">echo $STATUS</span></div>
+            <div class="t-line t-out"><span class="t-open">✦ Open to Internships</span></div>
+            <div class="t-blank"></div>
+            <div class="t-line"><span class="t-prompt">❯</span><span class="t-cursor">█</span></div>
+          </div>
         </div>
-        <div class="terminal-body">
-          <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">whoami</span></div>
-          <div class="t-line t-out"><span class="t-k">Name    </span><span class="t-v">Sandeep Kumar Mishra</span></div>
-          <div class="t-line t-out"><span class="t-k">Role    </span><span class="t-v">ECE Student · JIIT Noida</span></div>
-          <div class="t-line t-out"><span class="t-k">CGPA    </span><span class="t-v t-accent">9.03 / 10.0</span></div>
-          <div class="t-line t-out"><span class="t-k">Batch   </span><span class="t-v">2024 – 2028</span></div>
-          <div class="t-blank"></div>
-          <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">ls activities/</span></div>
-          <div class="t-line t-out t-dir">μCR_Robotics/&nbsp;&nbsp;BitBox_5.0/&nbsp;&nbsp;Cricket/</div>
-          <div class="t-blank"></div>
-          <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">echo $STATUS</span></div>
-          <div class="t-line t-out"><span class="t-open">✦ Open to Internships</span></div>
-          <div class="t-blank"></div>
-          <div class="t-line"><span class="t-prompt">❯</span><span class="t-cursor">█</span></div>
+      </div>
+
+      <!-- ── CRICKET ROBOT  (desktop only) ── -->
+      <div class="robot-col reveal reveal-d2">
+        <div class="robot-wrap">
+          <!-- Speech bubble -->
+          <div class="robot-bubble">
+            <span>Look at this! 👈</span>
+          </div>
+          <!-- Robot SVG -->
+          <svg class="robot-svg" viewBox="0 0 160 340" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+            <!-- Antenna pulse -->
+            <circle class="ant-pulse" cx="80" cy="6" r="6" stroke="#d97757" stroke-width="1.5" fill="none"/>
+            <!-- Antenna -->
+            <line x1="80" y1="12" x2="80" y2="38" stroke="#79dac8" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="80" cy="6" r="6" fill="#d97757"/>
+            <circle cx="80" cy="6" r="2.5" fill="white" opacity="0.9"/>
+
+            <!-- Cricket Cap -->
+            <rect x="28" y="36" width="104" height="34" rx="19" fill="#c06540"/>
+            <ellipse cx="80" cy="68" rx="60" ry="11" fill="#9c3826"/>
+            <!-- cap vents -->
+            <rect x="54" y="38" width="5" height="24" rx="2.5" fill="rgba(0,0,0,.18)"/>
+            <rect x="66" y="36" width="5" height="28" rx="2.5" fill="rgba(0,0,0,.13)"/>
+            <rect x="89" y="36" width="5" height="28" rx="2.5" fill="rgba(0,0,0,.13)"/>
+            <rect x="101" y="38" width="5" height="24" rx="2.5" fill="rgba(0,0,0,.18)"/>
+
+            <!-- Head -->
+            <rect x="28" y="36" width="104" height="76" rx="20" fill="#1a1a1a"/>
+            <!-- Re-apply cap on top -->
+            <rect x="28" y="36" width="104" height="36" rx="19" fill="#c06540"/>
+            <rect x="28" y="58" width="104" height="16" fill="#9c3826"/>
+            <rect x="54" y="38" width="5" height="22" rx="2.5" fill="rgba(0,0,0,.18)"/>
+            <rect x="66" y="36" width="5" height="22" rx="2.5" fill="rgba(0,0,0,.13)"/>
+            <rect x="89" y="36" width="5" height="22" rx="2.5" fill="rgba(0,0,0,.13)"/>
+            <rect x="101" y="38" width="5" height="22" rx="2.5" fill="rgba(0,0,0,.18)"/>
+
+            <!-- LED Eyes -->
+            <rect x="38" y="72" width="30" height="17" rx="6" fill="#080808"/>
+            <rect x="92" y="72" width="30" height="17" rx="6" fill="#080808"/>
+            <rect x="40" y="74" width="26" height="13" rx="4" fill="#79dac8" class="eye-glow"/>
+            <rect x="94" y="74" width="26" height="13" rx="4" fill="#79dac8" class="eye-glow"/>
+            <!-- scanlines -->
+            <rect x="40" y="79" width="26" height="2.5" rx="1" fill="rgba(0,0,0,.35)"/>
+            <rect x="94" y="79" width="26" height="2.5" rx="1" fill="rgba(0,0,0,.35)"/>
+            <!-- highlights -->
+            <rect x="42" y="75" width="8" height="5" rx="2" fill="white" opacity="0.4"/>
+            <rect x="96" y="75" width="8" height="5" rx="2" fill="white" opacity="0.4"/>
+
+            <!-- Mouth LED strip -->
+            <rect x="44" y="100" width="72" height="9" rx="4.5" fill="#080808"/>
+            <rect x="46" y="102" width="8" height="5" rx="2.5" fill="#d97757" opacity=".9"/>
+            <rect x="57" y="102" width="8" height="5" rx="2.5" fill="#d97757" opacity=".65"/>
+            <rect x="68" y="102" width="8" height="5" rx="2.5" fill="#d97757" opacity=".9"/>
+            <rect x="79" y="102" width="8" height="5" rx="2.5" fill="#d97757" opacity=".5"/>
+            <rect x="90" y="102" width="8" height="5" rx="2.5" fill="#d97757" opacity=".75"/>
+            <rect x="101" y="102" width="8" height="5" rx="2.5" fill="#d97757" opacity=".35"/>
+
+            <!-- Neck -->
+            <rect x="66" y="112" width="28" height="14" rx="6" fill="#1a1a1a"/>
+
+            <!-- Body -->
+            <rect x="18" y="126" width="124" height="96" rx="18" fill="#1a1a1a"/>
+            <rect x="20" y="128" width="120" height="92" rx="16" fill="#222"/>
+            <!-- circuit lines -->
+            <line x1="32" y1="148" x2="128" y2="148" stroke="#79dac8" stroke-width=".8" opacity=".2"/>
+            <circle cx="60" cy="148" r="2.5" fill="#79dac8" opacity=".55"/>
+            <circle cx="100" cy="148" r="2.5" fill="#d97757" opacity=".55"/>
+            <line x1="60" y1="148" x2="60" y2="165" stroke="#79dac8" stroke-width=".8" opacity=".2"/>
+            <line x1="100" y1="148" x2="100" y2="165" stroke="#d97757" stroke-width=".8" opacity=".2"/>
+            <line x1="32" y1="184" x2="128" y2="184" stroke="#79dac8" stroke-width=".8" opacity=".12"/>
+            <!-- cricket seam -->
+            <circle cx="80" cy="168" r="22" stroke="#d97757" stroke-width=".8" opacity=".1"/>
+            <circle cx="80" cy="168" r="15" stroke="#d97757" stroke-width="1.5" opacity=".35"/>
+            <path d="M65 168 Q80 159 95 168" stroke="#d97757" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".55"/>
+            <path d="M65 168 Q80 177 95 168" stroke="#d97757" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".55"/>
+
+            <!-- LEFT ARM — pointing at terminal -->
+            <circle cx="18" cy="140" r="10" fill="#1a1a1a" stroke="#d97757" stroke-width="1" opacity=".5"/>
+            <rect x="2" y="133" width="17" height="40" rx="8.5" fill="#1a1a1a" transform="rotate(-18,10,153)"/>
+            <rect x="-7" y="165" width="15" height="32" rx="7.5" fill="#222" transform="rotate(-30,0,181)"/>
+            <circle cx="-8" cy="197" r="10" fill="#222" stroke="#79dac8" stroke-width="1.5"/>
+            <!-- pointer finger -->
+            <rect x="-14" y="193" width="14" height="7" rx="3.5" fill="#1a1a1a"/>
+            <!-- dashed arrow pointing left (toward terminal) -->
+            <path d="M-22 195 L-38 186" stroke="#d97757" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 3" opacity=".75"/>
+            <path d="M-36 182 L-38 186 L-34 189" stroke="#d97757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".75" fill="none"/>
+
+            <!-- RIGHT ARM — holding cricket bat -->
+            <circle cx="142" cy="140" r="10" fill="#1a1a1a" stroke="#d97757" stroke-width="1" opacity=".5"/>
+            <rect x="141" y="130" width="17" height="44" rx="8.5" fill="#1a1a1a" transform="rotate(22,149,152)"/>
+
+            <!-- Cricket Bat -->
+            <rect x="150" y="76" width="18" height="72" rx="9" fill="#c9a462"/>
+            <rect x="151" y="142" width="16" height="24" rx="4" fill="#7b5c1e"/>
+            <!-- bat highlight -->
+            <rect x="150" y="76" width="4" height="66" rx="2" fill="rgba(255,255,255,.14)"/>
+            <!-- grain lines -->
+            <line x1="156" y1="84" x2="156" y2="140" stroke="rgba(255,255,255,.15)" stroke-width="1.3"/>
+            <line x1="161" y1="84" x2="161" y2="140" stroke="rgba(255,255,255,.15)" stroke-width="1.3"/>
+            <!-- bat brand plate -->
+            <rect x="152" y="104" width="14" height="20" rx="3" fill="rgba(0,0,0,.15)"/>
+            <text x="159" y="118" text-anchor="middle" font-size="9" fill="#d97757" font-family="monospace" opacity=".9">SD</text>
+
+            <!-- LEGS -->
+            <rect x="36" y="222" width="30" height="66" rx="11" fill="#1a1a1a"/>
+            <rect x="94" y="222" width="30" height="66" rx="11" fill="#1a1a1a"/>
+            <!-- knee joints -->
+            <circle cx="51" cy="252" r="5" fill="#222" stroke="#79dac8" stroke-width="1" opacity=".5"/>
+            <circle cx="109" cy="252" r="5" fill="#222" stroke="#d97757" stroke-width="1" opacity=".5"/>
+
+            <!-- BOOTS -->
+            <rect x="22" y="280" width="48" height="16" rx="8" fill="#1a1a1a"/>
+            <rect x="90" y="280" width="48" height="16" rx="8" fill="#1a1a1a"/>
+            <rect x="24" y="281" width="44" height="6" rx="3" fill="#252525"/>
+            <rect x="92" y="281" width="44" height="6" rx="3" fill="#252525"/>
+            <!-- boot terra stripe -->
+            <rect x="22" y="290" width="48" height="6" rx="0 0 8 8" fill="#d97757" opacity=".22"/>
+            <rect x="90" y="290" width="48" height="6" rx="0 0 8 8" fill="#d97757" opacity=".22"/>
+          </svg>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!--  EDUCATION  -->
+<!-- ═══════════════════════════════════════════
+     EDUCATION
+═══════════════════════════════════════════ -->
 <section id="education">
   <div class="container">
     <div class="sec-head reveal">
@@ -223,32 +378,24 @@
       </div>
       <div class="edu-card reveal reveal-d1">
         <div class="edu-accent"></div>
-        <div class="edu-top">
-          <span class="edu-year">April 2024</span>
-        </div>
+        <div class="edu-top"><span class="edu-year">April 2024</span></div>
         <h3>Senior Secondary &amp; Secondary Education</h3>
         <p class="edu-inst"><i class="fas fa-school"></i> Kendriya Vidyalaya, Noida</p>
         <div class="course-pills">
-            <span class="cpill">Python </span>
-            <span class="cpill">MySQL</span>
-            <span class="cpill">RDBMS</span>
+          <span class="cpill">Python</span><span class="cpill">MySQL</span><span class="cpill">RDBMS</span>
         </div>
         <div class="score-pair">
-          <div class="score-block">
-            <span class="score-n">86%</span>
-            <span class="score-l">Class 12th</span>
-          </div>
-          <div class="score-block">
-            <span class="score-n">89.5%</span>
-            <span class="score-l">Class 10th</span>
-          </div>
+          <div class="score-block"><span class="score-n">86%</span><span class="score-l">Class 12th</span></div>
+          <div class="score-block"><span class="score-n">89.5%</span><span class="score-l">Class 10th</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!--  PROJECTS  -->
+<!-- ═══════════════════════════════════════════
+     PROJECTS
+═══════════════════════════════════════════ -->
 <section id="projects">
   <div class="container">
     <div class="sec-head reveal">
@@ -257,13 +404,11 @@
       <p class="sec-sub">A selection of things I've built, shipped, and learned from — spanning hardware, software, and everything in between.</p>
     </div>
     <div class="proj-grid">
-
-      <!-- Featured: Arduino -->
       <div class="proj-card proj-featured reveal">
         <div class="proj-content">
           <div class="proj-hdr">
             <span class="badge b-hw"><i class="fas fa-microchip"></i> Hardware</span>
-            <a href="#" class="proj-link-ico" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="proj-link-ico"><i class="fab fa-github"></i></a>
           </div>
           <h3>Arduino-Based Embedded Systems</h3>
           <p>A hands-on series of embedded projects: an obstacle-avoidance robot, a real-time temperature monitor, and LED control circuits — powered by ultrasonic, LM35, and IR sensors doing real-time data processing.</p>
@@ -273,16 +418,13 @@
             <span class="tpill">IR Module</span><span class="tpill">Proteus</span>
           </div>
         </div>
-        <div class="proj-visual">
-          <span class="proj-emoji">🤖</span>
-        </div>
+        <div class="proj-visual"><span class="proj-emoji">🤖</span></div>
       </div>
 
-      <!-- Plan My Journey -->
       <div class="proj-card reveal">
         <div class="proj-hdr">
           <span class="badge b-sw"><i class="fas fa-terminal"></i> Software</span>
-          <a href="#" class="proj-link-ico" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" class="proj-link-ico"><i class="fab fa-github"></i></a>
         </div>
         <h3>Plan My Journey</h3>
         <p>A terminal-based travel planner in C++ with a MySQL backend. Users manage routes, destinations, and trip details with full database persistence — clean, fast, no-frills.</p>
@@ -291,23 +433,21 @@
         </div>
       </div>
 
-      <!-- Accounting App -->
       <div class="proj-card reveal reveal-d1">
         <div class="proj-hdr">
           <span class="badge b-wip"><i class="fas fa-spinner fa-spin"></i> In Progress</span>
         </div>
         <h3>Accounting Application</h3>
-        <p>Making financial record-keeping approachable for everyone. Automatically generates Journal Entries, Ledgers, and Trial Balances — turning complex accounting into a smooth workflow.</p>
+        <p>Making financial record-keeping approachable for everyone. Automatically generates Journal Entries, Ledgers, and Trial Balances.</p>
         <div class="tech-row">
           <span class="tpill">In Development</span><span class="tpill">Finance Logic</span>
         </div>
       </div>
 
-      <!-- Hackathon -->
       <div class="proj-card proj-wide reveal">
         <div class="proj-hdr">
           <span class="badge b-hk"><i class="fas fa-trophy"></i> Hackathon · BitBox 5.0</span>
-          <a href="#" class="proj-link-ico" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+          <a href="#" class="proj-link-ico"><i class="fas fa-external-link-alt"></i></a>
         </div>
         <h3>Freelancing Platform</h3>
         <p>Built collaboratively at the BitBox 5.0 Hackathon — a fully functional freelancing website designed and shipped under real time pressure. A great lesson in teamwork, speed, and deciding what to cut when the clock is ticking.</p>
@@ -316,12 +456,13 @@
           <span class="tpill">Rapid Prototyping</span><span class="tpill">Teamwork</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!--  SKILLS  -->
+<!-- ═══════════════════════════════════════════
+     SKILLS
+═══════════════════════════════════════════ -->
 <section id="skills">
   <div class="container">
     <div class="sec-head reveal">
@@ -329,73 +470,26 @@
       <h2 class="sec-title">Skills &amp; Tools</h2>
       <p class="sec-sub">A growing toolkit that bridges the gap between hardware and software.</p>
     </div>
-
     <div class="skills-layout">
-      <!-- Grid of skill cards -->
       <div class="skills-grid">
-
-        <div class="skill-card reveal" data-tip="Systems & Embedded">
-          <div class="sk-icon-wrap sk-cpp"><i class="fas fa-code"></i></div>
-          <p class="sk-name">C / C++</p>
-          <p class="sk-cat">Systems &amp; Embedded</p>
-        </div>
-
-        <div class="skill-card reveal reveal-d1" data-tip="Scripting & AI/ML">
-          <div class="sk-icon-wrap sk-python"><i class="fab fa-python"></i></div>
-          <p class="sk-name">Python</p>
-          <p class="sk-cat">Scripting &amp; AI/ML</p>
-        </div>
-
-        <div class="skill-card reveal reveal-d2" data-tip="Frontend Web">
-          <div class="sk-icon-wrap sk-html"><i class="fab fa-html5"></i></div>
-          <p class="sk-name">HTML / CSS</p>
-          <p class="sk-cat">Frontend Web</p>
-        </div>
-
-        <div class="skill-card reveal reveal-d3" data-tip="Interactivity & Logic">
-          <div class="sk-icon-wrap sk-js"><i class="fab fa-js"></i></div>
-          <p class="sk-name">JavaScript</p>
-          <p class="sk-cat">Interactivity</p>
-        </div>
-
-        <div class="skill-card reveal" data-tip="Signal Processing & Modelling">
-          <div class="sk-icon-wrap sk-matlab"><i class="fas fa-wave-square"></i></div>
-          <p class="sk-name">MATLAB</p>
-          <p class="sk-cat">Signal Processing</p>
-        </div>
-
-        <div class="skill-card reveal reveal-d1" data-tip="Circuit Simulation">
-          <div class="sk-icon-wrap sk-proteus"><i class="fas fa-microchip"></i></div>
-          <p class="sk-name">Proteus</p>
-          <p class="sk-cat">Circuit Simulation</p>
-        </div>
-
-        <div class="skill-card reveal reveal-d2" data-tip="Machine Learning Basics">
-          <div class="sk-icon-wrap sk-ai"><i class="fas fa-brain"></i></div>
-          <p class="sk-name">AI / ML</p>
-          <p class="sk-cat">Machine Learning</p>
-        </div>
-
-        <div class="skill-card reveal reveal-d3" data-tip="Relational Databases">
-          <div class="sk-icon-wrap sk-mysql"><i class="fas fa-database"></i></div>
-          <p class="sk-name">MySQL</p>
-          <p class="sk-cat">Databases</p>
-        </div>
-
+        <div class="skill-card reveal"      data-tip="Systems & Embedded"><div class="sk-icon-wrap sk-cpp"><i class="fas fa-code"></i></div><p class="sk-name">C / C++</p><p class="sk-cat">Systems &amp; Embedded</p></div>
+        <div class="skill-card reveal rd1"  data-tip="Scripting & AI/ML"><div class="sk-icon-wrap sk-python"><i class="fab fa-python"></i></div><p class="sk-name">Python</p><p class="sk-cat">Scripting &amp; AI/ML</p></div>
+        <div class="skill-card reveal rd2"  data-tip="Frontend Web"><div class="sk-icon-wrap sk-html"><i class="fab fa-html5"></i></div><p class="sk-name">HTML / CSS</p><p class="sk-cat">Frontend Web</p></div>
+        <div class="skill-card reveal rd3"  data-tip="Interactivity"><div class="sk-icon-wrap sk-js"><i class="fab fa-js"></i></div><p class="sk-name">JavaScript</p><p class="sk-cat">Interactivity</p></div>
+        <div class="skill-card reveal"      data-tip="Signal Processing"><div class="sk-icon-wrap sk-matlab"><i class="fas fa-wave-square"></i></div><p class="sk-name">MATLAB</p><p class="sk-cat">Signal Processing</p></div>
+        <div class="skill-card reveal rd1"  data-tip="Circuit Simulation"><div class="sk-icon-wrap sk-proteus"><i class="fas fa-microchip"></i></div><p class="sk-name">Proteus</p><p class="sk-cat">Circuit Simulation</p></div>
+        <div class="skill-card reveal rd2"  data-tip="Machine Learning"><div class="sk-icon-wrap sk-ai"><i class="fas fa-brain"></i></div><p class="sk-name">AI / ML</p><p class="sk-cat">Machine Learning</p></div>
+        <div class="skill-card reveal rd3"  data-tip="Databases"><div class="sk-icon-wrap sk-mysql"><i class="fas fa-database"></i></div><p class="sk-name">MySQL</p><p class="sk-cat">Databases</p></div>
       </div>
-
-      <!-- Side info panels -->
       <div class="skills-aside">
         <div class="aside-block reveal">
           <h4><i class="fas fa-compass"></i> Areas of Interest</h4>
           <ul>
-            <li>Embedded Systems</li>
-            <li>Signal Processing</li>
-            <li>Software Development</li>
-            <li>Circuit Design</li>
+            <li>Embedded Systems</li><li>Signal Processing</li>
+            <li>Software Development</li><li>Circuit Design</li>
           </ul>
         </div>
-        <div class="aside-block reveal reveal-d2">
+        <div class="aside-block reveal rd2">
           <h4><i class="fas fa-star"></i> Activities</h4>
           <ul>
             <li>Campus Robotics Club (μCR)</li>
@@ -408,36 +502,56 @@
   </div>
 </section>
 
-<!--  CONTACT  -->
+<!-- ═══════════════════════════════════════════
+     CONTACT  —  light theme
+═══════════════════════════════════════════ -->
 <section id="contact">
+  <div class="contact-bg-word" aria-hidden="true">HELLO</div>
+  <!-- decorative blobs -->
+  <div class="ct-blob ct-blob-a"></div>
+  <div class="ct-blob ct-blob-b"></div>
+
   <div class="container">
-    <div class="contact-inner reveal">
-      <p class="eyebrow eyebrow-center eyebrow-light">
-        <span class="eyebrow-line"></span>Let's Talk<span class="eyebrow-line"></span>
-      </p>
-      <h2 class="sec-title sec-title-light">Open to opportunities &amp;<br>interesting conversations</h2>
-      <p class="contact-sub">Whether you have a project idea, an internship opportunity, or just want to say hello — I'd love to hear from you. My inbox is always open!</p>
-      <div class="contact-links">
-        <a href="mailto:sandeep28092006@gmail.com" class="clink clink-fill">
-          <i class="fas fa-envelope"></i> Send an Email
-        </a>
-        <a href="https://www.linkedin.com/in/sandeep-kumar-mishra-7628b6308/" target="_blank" class="clink clink-ghost">
-          <i class="fab fa-linkedin-in"></i> LinkedIn
-        </a>
-        <a href="https://github.com/sandeepkm45" target="_blank" class="clink clink-ghost">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="tel:+918076333070" class="clink clink-ghost">
-          <i class="fas fa-phone"></i> +91 8076333070
-        </a>
-      </div>
+    <div class="contact-head reveal">
+      <p class="eyebrow eyebrow-center"><span class="eyebrow-line"></span>Let's Talk<span class="eyebrow-line"></span></p>
+      <h2 class="sec-title" style="text-align:center;">Open to opportunities &amp;<br>interesting conversations</h2>
+      <p class="contact-intro">Whether you have a project idea, an internship opportunity, or just want to say hello — I'd love to hear from you.</p>
+    </div>
+
+    <div class="contact-cards reveal">
+      <a href="mailto:sandeep28092006@gmail.com" class="cc-card">
+        <div class="cc-icon cc-email"><i class="fas fa-envelope"></i></div>
+        <div class="cc-text"><span class="cc-label">Email</span><span class="cc-value">sandeep28092006@gmail.com</span></div>
+        <i class="fas fa-arrow-right cc-arrow"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/sandeep-kumar-mishra-7628b6308/" target="_blank" class="cc-card">
+        <div class="cc-icon cc-li"><i class="fab fa-linkedin-in"></i></div>
+        <div class="cc-text"><span class="cc-label">LinkedIn</span><span class="cc-value">Connect with me</span></div>
+        <i class="fas fa-arrow-right cc-arrow"></i>
+      </a>
+      <a href="https://github.com/sandeepkm45" target="_blank" class="cc-card">
+        <div class="cc-icon cc-gh"><i class="fab fa-github"></i></div>
+        <div class="cc-text"><span class="cc-label">GitHub</span><span class="cc-value">@sandeepkm45</span></div>
+        <i class="fas fa-arrow-right cc-arrow"></i>
+      </a>
+      <a href="tel:+918076333070" class="cc-card">
+        <div class="cc-icon cc-ph"><i class="fas fa-phone"></i></div>
+        <div class="cc-text"><span class="cc-label">Phone</span><span class="cc-value">+91 8076333070</span></div>
+        <i class="fas fa-arrow-right cc-arrow"></i>
+      </a>
+    </div>
+
+    <div class="contact-cta reveal">
+      <a href="mailto:sandeep28092006@gmail.com" class="btn btn-fill btn-cta">
+        <i class="fas fa-paper-plane"></i> Say Hello
+      </a>
+      <p class="cta-note">Usually replies within 24 hours ✨</p>
     </div>
   </div>
 </section>
 
-<!--  FOOTER  -->
 <footer>
-  <p>© 2025 <span class="f-accent">Sandeep Kumar Mishra</span>. Crafted with curiosity.</p>
+  <p>© <span id="fyear"></span> <span class="f-accent">Sandeep Kumar Mishra</span> &nbsp;·&nbsp; Crafted with curiosity &amp; coffee ☕</p>
 </footer>
 
 <script src="script.js"></script>
