@@ -2,7 +2,7 @@
 /* ═══════════════════════════════════════════════════
    san.dev  ·  Portfolio  ·  script.js
    Preloader · Particles · Typing · Reveal · Counters
-   Terminal · Dots · Magnetic · Clock · Float Badge
+   Terminal · Section Dots · Magnetic Buttons · Clock
 ═══════════════════════════════════════════════════ */
 
 const $ = s => document.querySelector(s);
@@ -14,44 +14,44 @@ const $$ = s => [...document.querySelectorAll(s)];
 (() => {
   document.body.style.overflow = 'hidden';
 
-  const pl      = $('#preloader');
-  const plFill  = $('#plFill');
-  const plPct   = $('#plPct');
-  const plStat  = $('#plStatus');
-  const plTag   = $('#plTagline');
-  const plBar   = $('#plBarWrap');
-  const plCur   = $('#plCursor');
+  const pl = $('#preloader');
+  const plFill = $('#plFill');
+  const plPct = $('#plPct');
+  const plStat = $('#plStat');
+  const plSub = $('#plSub');
+  const plBar = $('#plBarWrap');
+  const plCur = $('#plCur');
 
   const chars = {
     lt: $('#plLt'), san: $('#plSan'),
     dot: $('#plDot'), dev: $('#plDev'), cl: $('#plCl')
   };
 
-  const statuses = ['Initializing…','Loading assets…','Almost there…','Ready!'];
-  const SHOW_MS  = 2800; // minimum display time
+  const statuses = ['Initializing…', 'Loading assets…', 'Almost there…', 'Ready!'];
+  const SHOW_MS = 2800; // minimum display time
 
-  /* Step 1 — reveal brand characters */
+  /* Step 1 — reveal brand characters one by one */
   const steps = [
-    [0,   () => chars.lt.classList.add('vis')],
-    [280, () => chars.san.classList.add('vis')],
-    [520, () => chars.dot.classList.add('vis')],
-    [660, () => chars.dev.classList.add('vis')],
-    [900, () => chars.cl.classList.add('vis')],
-    [1050,() => { plTag.classList.add('vis'); plBar.classList.add('vis'); }]
+    [0, () => chars.lt?.classList.add('v')],
+    [280, () => chars.san?.classList.add('v')],
+    [520, () => chars.dot?.classList.add('v')],
+    [660, () => chars.dev?.classList.add('v')],
+    [900, () => chars.cl?.classList.add('v')],
+    [1050, () => { plSub?.classList.add('v'); plBar?.classList.add('v'); }]
   ];
   steps.forEach(([t, fn]) => setTimeout(fn, t));
 
-  /* Step 2 — progress bar + status counter */
+  /* Step 2 — progress bar + status text */
   let barStarted = false;
   function startBar() {
     if (barStarted) return; barStarted = true;
     const dur = 1500, t0 = performance.now();
     let si = 0;
     (function tick(now) {
-      const p   = Math.min((now - t0) / dur, 1);
+      const p = Math.min((now - t0) / dur, 1);
       const pct = Math.round(p * 100);
       if (plFill) plFill.style.width = pct + '%';
-      if (plPct)  plPct.textContent  = pct + '%';
+      if (plPct) plPct.textContent = pct + '%';
       const sIdx = Math.floor(p * (statuses.length - 1));
       if (sIdx !== si && plStat) { si = sIdx; plStat.textContent = statuses[si]; }
       if (p < 1) requestAnimationFrame(tick);
@@ -64,13 +64,13 @@ const $$ = s => [...document.querySelectorAll(s)];
   let pageReady = false, timerDone = false;
   function tryExit() {
     if (!pageReady || !timerDone) return;
-    if (plCur) plCur.classList.add('hide');
+    plCur?.classList.add('hide');
     setTimeout(() => {
-      if (pl) pl.classList.add('pl-exit');
+      pl?.classList.add('exit');
       setTimeout(() => {
         if (pl) pl.style.display = 'none';
         document.body.style.overflow = '';
-        updateProgress();
+        navTick();
         secDotsTick();
       }, 900);
     }, 120);
@@ -80,37 +80,26 @@ const $$ = s => [...document.querySelectorAll(s)];
 })();
 
 /* ══════════════════════════════════════════════════
-   2. SCROLL PROGRESS BAR
-══════════════════════════════════════════════════ */
-const progressBar = $('#scrollProgress');
-function updateProgress() {
-  if (!progressBar) return;
-  const total = document.documentElement.scrollHeight - innerHeight;
-  progressBar.style.width = (scrollY / total * 100) + '%';
-}
-window.addEventListener('scroll', updateProgress, { passive: true });
-
-/* ══════════════════════════════════════════════════
-   3. PARTICLE CANVAS  (hero)
+   2. PARTICLE CANVAS  (hero background)
 ══════════════════════════════════════════════════ */
 (() => {
-  const canvas = $('#particleCanvas');
+  const canvas = $('#pCanvas');
   if (!canvas) return;
-  const ctx   = canvas.getContext('2d');
-  const C1    = '217,119,87';   // terra
-  const C2    = '121,218,200';  // teal
+  const ctx = canvas.getContext('2d');
+  const C1 = '217,119,87';  // terra
+  const C2 = '227,169,72';  // gold
   const COUNT = 55, LINK = 130;
   let W, H, pts = [], raf;
 
   class Dot {
     reset() {
-      this.x  = Math.random() * W;
-      this.y  = Math.random() * H;
+      this.x = Math.random() * W;
+      this.y = Math.random() * H;
       this.vx = (Math.random() - .5) * .42;
       this.vy = (Math.random() - .5) * .42;
-      this.r  = 1.5 + Math.random() * 1.8;
-      this.a  = .14 + Math.random() * .28;
-      this.c  = Math.random() > .6 ? C2 : C1;
+      this.r = 1.5 + Math.random() * 1.8;
+      this.a = .14 + Math.random() * .28;
+      this.c = Math.random() > .6 ? C2 : C1;
     }
     step() {
       this.x += this.vx; this.y += this.vy;
@@ -126,7 +115,7 @@ window.addEventListener('scroll', updateProgress, { passive: true });
   }
 
   function build() {
-    W = canvas.width  = canvas.offsetWidth;
+    W = canvas.width = canvas.offsetWidth;
     H = canvas.height = canvas.offsetHeight;
     pts = Array.from({ length: COUNT }, () => { const d = new Dot(); d.reset(); return d; });
   }
@@ -137,13 +126,13 @@ window.addEventListener('scroll', updateProgress, { passive: true });
       pts[i].step(); pts[i].draw();
       for (let j = i + 1; j < COUNT; j++) {
         const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
-        const d  = Math.hypot(dx, dy);
+        const d = Math.hypot(dx, dy);
         if (d < LINK) {
           ctx.beginPath();
           ctx.moveTo(pts[i].x, pts[i].y);
           ctx.lineTo(pts[j].x, pts[j].y);
           ctx.strokeStyle = `rgba(${pts[i].c},${(1 - d / LINK) * .11})`;
-          ctx.lineWidth   = 1;
+          ctx.lineWidth = 1;
           ctx.stroke();
         }
       }
@@ -158,30 +147,30 @@ window.addEventListener('scroll', updateProgress, { passive: true });
 })();
 
 /* ══════════════════════════════════════════════════
-   4. NAVBAR  —  scroll shrink · active links
+   3. NAVBAR  —  scroll shrink · active links
 ══════════════════════════════════════════════════ */
-const navEl  = $('#navbar');
-const bttBtn = $('#backToTop');
-const secs   = $$('section[id]');
-const navAs  = $$('.nav-links a');
+const navEl = $('#navbar');
+const bttEl = $('#btt');
+const secs = $$('section[id]');
+const navAs = $$('.nav-links a');
 
 function navTick() {
   const y = scrollY;
-  navEl?.classList.toggle('scrolled', y > 60);
-  bttBtn?.classList.toggle('visible', y > 420);
+  navEl?.classList.toggle('sc', y > 60);
+  bttEl?.classList.toggle('vis', y > 420);
   let cur = '';
   secs.forEach(s => { if (y >= s.offsetTop - 160) cur = s.id; });
   navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${cur}`));
 }
 window.addEventListener('scroll', navTick, { passive: true });
-bttBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+bttEl?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 /* ══════════════════════════════════════════════════
-   5. MOBILE NAV
+   4. MOBILE NAV
 ══════════════════════════════════════════════════ */
 (() => {
-  const ham = $('#hamburger'), mob = $('#mobNav'), cls = $('#mobClose');
-  const open  = () => { mob?.classList.add('open'); ham?.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const ham = $('#ham'), mob = $('#mobNav'), cls = $('#mobX');
+  const open = () => { mob?.classList.add('open'); ham?.classList.add('open'); document.body.style.overflow = 'hidden'; };
   const close = () => { mob?.classList.remove('open'); ham?.classList.remove('open'); document.body.style.overflow = ''; };
   ham?.addEventListener('click', open);
   cls?.addEventListener('click', close);
@@ -189,7 +178,7 @@ bttBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smo
 })();
 
 /* ══════════════════════════════════════════════════
-   6. SMOOTH SCROLL
+   5. SMOOTH SCROLL  (all hash links)
 ══════════════════════════════════════════════════ */
 $$('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
@@ -201,21 +190,18 @@ $$('a[href^="#"]').forEach(a => {
 });
 
 /* ══════════════════════════════════════════════════
-   7. SCROLL REVEAL
+   6. SCROLL REVEAL
 ══════════════════════════════════════════════════ */
-new IntersectionObserver(
-  (entries, obs) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } }),
-  { threshold: 0.08, rootMargin: '0px 0px -28px 0px' }
-).observe ? (() => {
+(() => {
   const ro = new IntersectionObserver(
     (entries, obs) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } }),
     { threshold: 0.08, rootMargin: '0px 0px -28px 0px' }
   );
   $$('.reveal').forEach(el => ro.observe(el));
-})() : $$('.reveal').forEach(el => el.classList.add('in'));
+})();
 
 /* ══════════════════════════════════════════════════
-   8. COUNTER ANIMATION  (stat numbers)
+   7. COUNTER ANIMATION  (stat numbers)
 ══════════════════════════════════════════════════ */
 $$('[data-target]').forEach(el => {
   new IntersectionObserver((ents, obs) => {
@@ -235,7 +221,7 @@ $$('[data-target]').forEach(el => {
 });
 
 /* ══════════════════════════════════════════════════
-   9. TYPING EFFECT  (hero eyebrow)
+   8. TYPING EFFECT  (hero eyebrow)
 ══════════════════════════════════════════════════ */
 (() => {
   const el = $('.hero .typed-text');
@@ -269,26 +255,26 @@ $$('[data-target]').forEach(el => {
 })();
 
 /* ══════════════════════════════════════════════════
-   10. 3-D TILT  (skill cards)
+   9. 3-D TILT  (skill cards)
 ══════════════════════════════════════════════════ */
 if (!window.matchMedia('(hover:none)').matches) {
-  $$('.skill-card').forEach(card => {
+  $$('.sk-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const r = card.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width  - .5;
-      const y = (e.clientY - r.top)  / r.height - .5;
+      const x = (e.clientX - r.left) / r.width - .5;
+      const y = (e.clientY - r.top) / r.height - .5;
       card.style.transform = `translateY(-4px) rotateX(${-y * 12}deg) rotateY(${x * 12}deg) scale(1.03)`;
       card.style.transition = 'box-shadow .3s ease, border-color .3s ease';
     });
     card.addEventListener('mouseleave', () => {
-      card.style.transform  = '';
+      card.style.transform = '';
       card.style.transition = 'box-shadow .3s ease, transform .4s ease, border-color .3s ease';
     });
   });
 }
 
 /* ══════════════════════════════════════════════════
-   11. MOUSE SPOTLIGHT  (project cards)
+   10. MOUSE SPOTLIGHT  (project cards)
 ══════════════════════════════════════════════════ */
 $$('.proj-card').forEach(card => {
   card.addEventListener('mousemove', e => {
@@ -301,43 +287,42 @@ $$('.proj-card').forEach(card => {
 });
 
 /* ══════════════════════════════════════════════════
-   12. TERMINAL  —  animated typing on scroll
+   11. TERMINAL  —  animated typing on scroll
 ══════════════════════════════════════════════════ */
 (() => {
-  const body = $('.terminal-body');
+  const body = $('.t-body');
   if (!body) return;
-  const lines = body.querySelectorAll('.t-line, .t-blank');
+  const lines = body.querySelectorAll('.tl, .tb');
   lines.forEach(l => l.style.opacity = '0');
   new IntersectionObserver(entries => {
     if (!entries[0].isIntersecting) return;
-    entries[0].target.closest('.terminal-card').style.removeProperty('opacity');
     lines.forEach((l, i) => setTimeout(() => { l.style.transition = 'opacity .25s ease'; l.style.opacity = '1'; }, i * 75));
   }, { threshold: 0.3 }).observe(body);
 })();
 
 /* ══════════════════════════════════════════════════
-   13. LIVE TERMINAL CLOCK
+   12. LIVE TERMINAL CLOCK
 ══════════════════════════════════════════════════ */
 (() => {
   const el = $('#termClock');
   if (!el) return;
-  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  const mons = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const mons = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   function update() {
     const n = new Date();
-    const hh = String(n.getHours()).padStart(2,'0');
-    const mm = String(n.getMinutes()).padStart(2,'0');
-    const ss = String(n.getSeconds()).padStart(2,'0');
+    const hh = String(n.getHours()).padStart(2, '0');
+    const mm = String(n.getMinutes()).padStart(2, '0');
+    const ss = String(n.getSeconds()).padStart(2, '0');
     el.textContent = `${days[n.getDay()]} ${mons[n.getMonth()]} ${n.getDate()} ${hh}:${mm}:${ss}`;
   }
   update(); setInterval(update, 1000);
 })();
 
 /* ══════════════════════════════════════════════════
-   14. SECTION DOTS
+   13. SECTION DOTS
 ══════════════════════════════════════════════════ */
-const dotNav  = $('#secDots');
-const dotEls  = $$('.sd');
+const dotNav = $('#sdots');
+const dotEls = $$('.sd');
 const dotSecs = $$('section[id]');
 
 function secDotsTick() {
@@ -356,18 +341,18 @@ dotEls.forEach(d => d.addEventListener('click', e => {
 }));
 
 /* ══════════════════════════════════════════════════
-   15. MAGNETIC BUTTONS
+   14. MAGNETIC BUTTONS
 ══════════════════════════════════════════════════ */
 if (!window.matchMedia('(hover:none)').matches) {
-  $$('.mag-btn').forEach(btn => {
+  $$('.mag').forEach(btn => {
     btn.addEventListener('mousemove', e => {
       const r = btn.getBoundingClientRect();
-      const x = (e.clientX - r.left - r.width  / 2) * 0.28;
-      const y = (e.clientY - r.top  - r.height / 2) * 0.28;
+      const x = (e.clientX - r.left - r.width / 2) * 0.28;
+      const y = (e.clientY - r.top - r.height / 2) * 0.28;
       btn.style.transform = `translate(${x}px,${y}px)`;
     });
     btn.addEventListener('mouseleave', () => {
-      btn.style.transform  = '';
+      btn.style.transform = '';
       btn.style.transition = 'transform .5s cubic-bezier(.34,1.56,.64,1)';
       setTimeout(() => btn.style.transition = '', 500);
     });
@@ -375,11 +360,11 @@ if (!window.matchMedia('(hover:none)').matches) {
 }
 
 /* ══════════════════════════════════════════════════
-   16. FLOAT BADGE  —  delay show · dismiss
+   15. FLOAT BADGE  —  delay show · dismiss
 ══════════════════════════════════════════════════ */
 (() => {
   const badge = $('#floatBadge');
-  const xBtn  = $('#fbX');
+  const xBtn = $('#fbX');
   if (!badge) return;
   setTimeout(() => badge.classList.add('vis'), 3800);
   xBtn?.addEventListener('click', e => {
@@ -389,33 +374,16 @@ if (!window.matchMedia('(hover:none)').matches) {
 })();
 
 /* ══════════════════════════════════════════════════
-   17. FOOTER YEAR
+   16. FOOTER YEAR
 ══════════════════════════════════════════════════ */
-const fy = $('#fyear');
-if (fy) fy.textContent = new Date().getFullYear();
+const yrEl = $('#yr');
+if (yrEl) yrEl.textContent = new Date().getFullYear();
 
 /* ══════════════════════════════════════════════════
-   18. ROBOT EYE BLINK  (extra animation via class toggle)
+   17. CONTACT CARDS  —  staggered reveal
 ══════════════════════════════════════════════════ */
 (() => {
-  const eyes = $$('.eye-glow');
-  if (!eyes.length) return;
-  function blink() {
-    eyes.forEach(e => {
-      e.style.transform = 'scaleY(0.1)';
-      setTimeout(() => e.style.transform = '', 120);
-    });
-    // random interval 3–7s
-    setTimeout(blink, 3000 + Math.random() * 4000);
-  }
-  setTimeout(blink, 2500);
-})();
-
-/* ══════════════════════════════════════════════════
-   19. CONTACT CARDS  —  staggered reveal
-══════════════════════════════════════════════════ */
-(() => {
-  const cards = $$('.cc-card');
+  const cards = $$('.ct-card');
   if (!cards.length) return;
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -438,10 +406,10 @@ if (fy) fy.textContent = new Date().getFullYear();
 })();
 
 /* ══════════════════════════════════════════════════
-   20. SKILLS GRID  —  card pop-in stagger
+   18. SKILLS GRID  —  card pop-in stagger
 ══════════════════════════════════════════════════ */
 (() => {
-  const grid = $$('.skill-card');
+  const grid = $$('.sk-card');
   if (!grid.length) return;
   const obs = new IntersectionObserver(entries => {
     if (!entries[0].isIntersecting) return;
