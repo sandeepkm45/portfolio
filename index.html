@@ -1,559 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sandeep Kumar Mishra — san.dev</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<!-- SCROLL PROGRESS -->
-<!-- <div id="scrollProgress"></div> -->
-
-<!-- ═══════════════════════════════════════════
+  <!-- ═══════════════════════════════════
      PRELOADER  —  <San.Dev/>
-═══════════════════════════════════════════ -->
-<div id="preloader">
-  <div class="pl-grid-bg"></div>
-  <div class="pl-scan"></div>
-  <div class="pl-corner pl-tl"></div>
-  <div class="pl-corner pl-tr"></div>
-  <div class="pl-corner pl-bl"></div>
-  <div class="pl-corner pl-br"></div>
-
-  <div class="pl-content">
-    <!-- Brand tag -->
-    <div class="pl-brand-wrap">
-      <span class="pl-b pl-lt" id="plLt">&lt;</span><span class="pl-b pl-san" id="plSan">San</span><span class="pl-b pl-dot" id="plDot">.</span><span class="pl-b pl-dev" id="plDev">Dev</span><span class="pl-b pl-cl" id="plCl">/&gt;</span><span class="pl-cursor" id="plCursor">_</span>
-    </div>
-
-    <!-- Tagline -->
-    <p class="pl-tagline" id="plTagline">ECE &nbsp;·&nbsp; Developer &nbsp;·&nbsp; Maker</p>
-
-    <!-- Progress -->
-    <div class="pl-bar-wrap" id="plBarWrap">
-      <div class="pl-bar-track">
-        <div class="pl-bar-fill" id="plFill"></div>
-        <div class="pl-bar-shine"></div>
+═══════════════════════════════════ -->
+  <div id="preloader">
+    <div class="pl-grid"></div>
+    <div class="pl-scan"></div>
+    <div class="pl-corner pl-tl"></div>
+    <div class="pl-corner pl-tr"></div>
+    <div class="pl-corner pl-bl"></div>
+    <div class="pl-corner pl-br"></div>
+    <div class="pl-content">
+      <div class="pl-brand">
+        <span class="plb plb-lt" id="plLt">&lt;</span><span class="plb plb-san" id="plSan">San</span><span
+          class="plb plb-dot" id="plDot">.</span><span class="plb plb-dev" id="plDev">Dev</span><span class="plb plb-cl"
+          id="plCl">/&gt;</span><span class="pl-cur" id="plCur">_</span>
       </div>
-      <div class="pl-bar-labels">
-        <span class="pl-pct" id="plPct">0%</span>
-        <span class="pl-status" id="plStatus">Initializing…</span>
+      <p class="pl-sub" id="plSub">ECE &nbsp;·&nbsp; Developer &nbsp;·&nbsp; Maker</p>
+      <div class="pl-bar-wrap" id="plBarWrap">
+        <div class="pl-track">
+          <div class="pl-fill" id="plFill"></div>
+          <div class="pl-shine"></div>
+        </div>
+        <div class="pl-foot"><span class="pl-pct" id="plPct">0%</span><span class="pl-stat"
+            id="plStat">Initializing…</span></div>
       </div>
     </div>
+    <div class="pl-tag pl-t1"><span class="pt-dim">const </span><span class="pt-amber">cgpa</span><span class="pt-dim">
+        = </span><span class="pt-gold">9.03</span></div>
+    <div class="pl-tag pl-t2"><span class="pt-dim">&lt;!--</span><span class="pt-wht"> ECE @ JIIT </span><span
+        class="pt-dim">--&gt;</span></div>
+    <div class="pl-tag pl-t3"><span class="pt-purple">import</span><span class="pt-dim"> { curiosity }</span></div>
+    <div class="pl-tag pl-t4"><span class="pt-dim">$ </span><span class="pt-amber">git push</span><span class="pt-dim">
+        origin main</span></div>
   </div>
 
-  <!-- Decorative floating tags -->
-  <div class="pl-float-tag pl-ft1"><span class="pft-dim">const </span><span class="pft-var">cgpa</span><span class="pft-dim"> = </span><span class="pft-num">9.03</span></div>
-  <div class="pl-float-tag pl-ft2"><span class="pft-dim">&lt;!-- </span><span class="pft-cmt">ECE @ JIIT</span><span class="pft-dim"> --&gt;</span></div>
-  <div class="pl-float-tag pl-ft3"><span class="pft-fn">import</span><span class="pft-dim"> curiosity</span></div>
-  <div class="pl-float-tag pl-ft4"><span class="pft-dim">$ </span><span class="pft-var">git push</span><span class="pft-dim"> origin</span></div>
-</div>
+  <!-- SECTION DOTS -->
+  <!-- <nav class="sdots" id="sdots">
+    <a href="#home" class="sd active" data-lbl="Home"></a>
+    <a href="#about" class="sd" data-lbl="About"></a>
+    <a href="#education" class="sd" data-lbl="Education"></a>
+    <a href="#projects" class="sd" data-lbl="Projects"></a>
+    <a href="#skills" class="sd" data-lbl="Skills"></a>
+    <a href="#contact" class="sd" data-lbl="Contact"></a>
+  </nav> -->
 
-<!-- ═══════════════════════════════════════════
-     SECTION DOTS
-═══════════════════════════════════════════ -->
-<nav class="sec-dots" id="secDots">
-  <a href="#home"      class="sd active" data-lbl="Home"></a>
-  <a href="#about"     class="sd"        data-lbl="About"></a>
-  <a href="#education" class="sd"        data-lbl="Education"></a>
-  <a href="#projects"  class="sd"        data-lbl="Projects"></a>
-  <a href="#skills"    class="sd"        data-lbl="Skills"></a>
-  <a href="#contact"   class="sd"        data-lbl="Contact"></a>
-</nav>
+  <!-- FLOATING BADGE -->
+  <div class="float-badge" id="floatBadge">
+    <span class="fb-dot"></span>
+    <span>Open to Internships</span>
+    <button class="fb-x" id="fbX">×</button>
+  </div>
 
-<!-- FLOATING BADGE -->
-<div class="float-badge" id="floatBadge">
-  <span class="fb-pulse"></span>
-  <span>Open to Internships</span>
-  <button class="fb-x" id="fbX" aria-label="Dismiss">×</button>
-</div>
+  <!-- BACK TO TOP -->
+  <button id="btt"><i class="fas fa-arrow-up"></i></button>
 
-<!-- BACK TO TOP -->
-<button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <!-- ═══════════════════════════════════
+     NAVBAR  —  <san.dev/>
+═══════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <span class="brand"><span class="b-lt">&lt;</span><span class="b-san">san</span><span class="b-dot">.</span><span
+            class="b-dev">dev</span><span class="b-cl">/&gt;</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact" class="nav-cta">Say Hello</a></li>
+      </ul>
+      <button class="ham" id="ham"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
 
-<!-- ═══════════════════════════════════════════
-     NAVBAR  —  light glass  ·  <san.dev/>
-═══════════════════════════════════════════ -->
-<nav id="navbar">
-  <a href="#home" class="nav-logo">
-    <span class="brand-code"><span class="bc-lt">&lt;</span><span class="bc-san">san</span><span class="bc-dot">.</span><span class="bc-dev">dev</span><span class="bc-sl">/&gt;</span></span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact" class="nav-cta">Say Hello</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+  <div class="mob-nav" id="mobNav">
+    <button class="mob-x" id="mobX"><i class="fas fa-times"></i></button>
+    <a href="#about" class="ml">About</a>
+    <a href="#education" class="ml">Education</a>
+    <a href="#projects" class="ml">Projects</a>
+    <a href="#skills" class="ml">Skills</a>
+    <a href="#contact" class="ml">Contact</a>
+  </div>
 
-<!-- Mobile Nav -->
-<div class="mob-nav" id="mobNav">
-  <button class="mob-close" id="mobClose"><i class="fas fa-times"></i></button>
-  <a href="#about"     class="ml">About</a>
-  <a href="#education" class="ml">Education</a>
-  <a href="#projects"  class="ml">Projects</a>
-  <a href="#skills"    class="ml">Skills</a>
-  <a href="#contact"   class="ml">Contact</a>
-</div>
-
-<!-- ═══════════════════════════════════════════
+  <!-- ═══════════════════════════════════
      HERO
-═══════════════════════════════════════════ -->
-<section class="hero" id="home">
-  <canvas id="particleCanvas" class="hero-canvas"></canvas>
-  <div class="hero-grid">
-    <div class="hero-content">
-      <p class="eyebrow"><span class="eyebrow-line"></span><span class="typed-text"></span></p>
-      <h1>Hi, I'm<br><span class="accent">Sandeep</span><br><span class="h1-sub">Kumar Mishra</span></h1>
-      <p class="hero-bio">A B.Tech student at JIIT Noida who loves turning ideas into real things — from robots that dodge obstacles to hackathon platforms shipped overnight.</p>
-      <div class="btn-row">
-        <a href="#projects" class="btn btn-fill mag-btn"><i class="fas fa-code"></i> Explore my work</a>
-        <a href="#contact"  class="btn btn-outline mag-btn"><i class="fas fa-paper-plane"></i> Let's connect</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-num" data-target="9.03" data-decimal="2">0</span>
-          <span class="stat-lbl">CGPA / 10</span>
+═══════════════════════════════════ -->
+  <section class="hero" id="home">
+    <canvas id="pCanvas"></canvas>
+    <!-- ambient blobs -->
+    <div class="h-blob h-blob-a"></div>
+    <div class="h-blob h-blob-b"></div>
+    <div class="hero-grid">
+      <div class="hero-left">
+        <p class="eyebrow"><span class="ey-line"></span><span class="typed-text"></span></p>
+        <h1 class="hero-h1">
+          Hi, I'm<br>
+          <span class="name-grad">Sandeep</span><br>
+          <span class="hero-h1-sub">Kumar Mishra</span>
+        </h1>
+        <p class="hero-bio">A B.Tech student at JIIT Noida turning ideas into real things — from robots that dodge
+          obstacles to hackathon platforms shipped overnight.</p>
+        <div class="btn-row">
+          <a href="#projects" class="btn btn-fill mag"><i class="fas fa-code"></i> My Work</a>
+          <a href="#contact" class="btn btn-ghost mag"><i class="fas fa-paper-plane"></i> Connect</a>
         </div>
-        <div class="stat-div"></div>
-        <div class="stat-item">
-          <span class="stat-num" data-target="4" data-suffix="+">0</span>
-          <span class="stat-lbl">Projects Built</span>
-        </div>
-        <div class="stat-div"></div>
-        <div class="stat-item">
-          <span class="stat-num stat-plain">μCR</span>
-          <span class="stat-lbl">Robotics Club</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-photo">
-      <div class="photo-wrapper">
-        <div class="photo-ring ring-a"></div>
-        <div class="photo-ring ring-b"></div>
-        <div class="photo-frame">
-          <img src="sandy.jpeg" alt="Sandeep Kumar Mishra" class="photo-img"
-               onerror="this.style.display='none';document.getElementById('photoFallback').style.display='flex';"/>
-          <div class="photo-fallback" id="photoFallback">
-            <span class="fb-initials">SK</span>
-            <p class="fb-hint"><i class="fas fa-image"></i><br>Add <strong>sandeep.jpeg</strong></p>
+        <div class="hero-stats">
+          <div class="stat"><span class="sn" data-target="9.03" data-decimal="2">0</span><span class="sl">CGPA /
+              10</span></div>
+          <div class="stat-sep"></div>
+          <div class="stat"><span class="sn" data-target="4" data-suffix="+">0</span><span class="sl">Projects</span>
           </div>
-        </div>
-        <div class="hero-badge badge-tl"><i class="fas fa-microchip"></i><span>ECE @ JIIT</span></div>
-        <div class="hero-badge badge-br"><span class="badge-num">9.03</span><span class="badge-cap">CGPA</span></div>
-        <div class="deco-dots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-      </div>
-    </div>
-  </div>
-  <div class="scroll-cue">
-    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-    <span>Scroll</span>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     ABOUT  —  3-column: bio | terminal | robot
-═══════════════════════════════════════════ -->
-<section id="about">
-  <div class="container">
-    <div class="sec-head reveal">
-      <p class="eyebrow"><span class="eyebrow-line"></span>Who I Am</p>
-      <h2 class="sec-title">A curious mind,<br>always building</h2>
-    </div>
-    <div class="about-grid">
-
-      <!-- Bio -->
-      <div class="about-body reveal">
-        <p>Hello! I'm Sandeep — a B.Tech student in Electronics &amp; Communication Engineering at JIIT Noida, maintaining a CGPA of 9.03. I have a genuine passion for the full spectrum of engineering: from designing circuits in Proteus and writing embedded C to building terminal apps and crafting web interfaces.</p>
-        <p>I believe the best way to learn is to build, break things, and rebuild them better. That philosophy has taken me from blinking LEDs on an Arduino to programming obstacle-avoiding robots, from SQL-powered travel planners to hackathon-born freelancing platforms.</p>
-        <p>When I step away from the desk, you'll find me on the cricket field — where the same values of patience, teamwork, and reading the situation apply just as much as they do in engineering.</p>
-        <div class="tag-row">
-          <span class="chip">Embedded Systems</span>
-          <span class="chip">Signal Processing</span>
-          <span class="chip">Circuit Design</span>
-          <span class="chip">Software Dev</span>
-          <span class="chip">Open to Internships 🚀</span>
-          <span class="chip">Cricket Lover 🏏</span>
-        </div>
-        <div class="about-btns">
-          <a href="Resume.pdf" download class="btn btn-fill btn-sm"><i class="fas fa-download"></i> Download CV</a>
-          <a href="#contact" class="btn btn-terra-ghost btn-sm"><i class="fas fa-envelope"></i> Get in Touch</a>
+          <div class="stat-sep"></div>
+          <div class="stat"><span class="sn sn-plain">μCR</span><span class="sl">Robotics</span></div>
         </div>
       </div>
-
-      <!-- Terminal — STICKY -->
-      <div class="terminal-sticky-wrap">
-        <div class="terminal-card reveal reveal-d1">
-          <div class="terminal-bar">
-            <div class="t-dots">
-              <span class="td td-r"></span><span class="td td-y"></span><span class="td td-g"></span>
+      <div class="hero-right">
+        <div class="photo-wrapper">
+          <div class="ph-ring ring-a"></div>
+          <div class="ph-ring ring-b"></div>
+          <div class="ph-frame">
+            <img src="sandy.jpeg" alt="Sandeep Kumar Mishra" class="ph-img"
+              onerror="this.style.display='none';document.getElementById('phFb').style.display='flex';" />
+            <div class="ph-fb" id="phFb">
+              <span class="fb-ini">SK</span>
+              <p class="fb-hint"><i class="fas fa-image"></i><br>Add <strong>sandeep.jpeg</strong></p>
             </div>
-            <span class="t-title">sandeep@jiit ~ zsh</span>
-            <span class="t-live"><span class="t-live-dot"></span>LIVE</span>
           </div>
-          <div class="terminal-body">
-            <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">whoami</span></div>
-            <div class="t-line t-out"><span class="t-k">Name  </span><span class="t-v">Sandeep Kumar Mishra</span></div>
-            <div class="t-line t-out"><span class="t-k">Role  </span><span class="t-v">ECE Student · JIIT Noida</span></div>
-            <div class="t-line t-out"><span class="t-k">CGPA  </span><span class="t-v t-accent">9.03 / 10.0</span></div>
-            <div class="t-line t-out"><span class="t-k">Batch </span><span class="t-v">2024 – 2028</span></div>
-            <div class="t-blank"></div>
-            <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">ls activities/</span></div>
-            <div class="t-line t-out t-dir">μCR_Robotics/&nbsp;&nbsp;BitBox_5.0/&nbsp;&nbsp;Cricket/</div>
-            <div class="t-blank"></div>
-            <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">date</span></div>
-            <div class="t-line t-out"><span class="t-v t-clock" id="termClock">--</span></div>
-            <div class="t-blank"></div>
-            <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">echo $STATUS</span></div>
-            <div class="t-line t-out"><span class="t-open">✦ Open to Internships</span></div>
-            <div class="t-blank"></div>
-            <div class="t-line"><span class="t-prompt">❯</span><span class="t-cursor">█</span></div>
+          <div class="h-badge b-tl"><i class="fas fa-microchip"></i><span>ECE @ JIIT</span></div>
+          <div class="h-badge b-br"><span class="bn">9.03</span><span class="bc">CGPA</span></div>
+          <div class="deco-dots">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
           </div>
-        </div>
-      </div>
-
-      <!-- ── CRICKET ROBOT  (desktop only) ── -->
-      <div class="robot-col reveal reveal-d2">
-        <div class="robot-wrap">
-          <!-- Speech bubble -->
-          <div class="robot-bubble">
-            <span>Look at this! 👈</span>
-          </div>
-          <!-- Robot SVG -->
-          <svg class="robot-svg" viewBox="0 0 160 340" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <!-- Antenna pulse -->
-            <circle class="ant-pulse" cx="80" cy="6" r="6" stroke="#d97757" stroke-width="1.5" fill="none"/>
-            <!-- Antenna -->
-            <line x1="80" y1="12" x2="80" y2="38" stroke="#79dac8" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="80" cy="6" r="6" fill="#d97757"/>
-            <circle cx="80" cy="6" r="2.5" fill="white" opacity="0.9"/>
-
-            <!-- Cricket Cap -->
-            <rect x="28" y="36" width="104" height="34" rx="19" fill="#c06540"/>
-            <ellipse cx="80" cy="68" rx="60" ry="11" fill="#9c3826"/>
-            <!-- cap vents -->
-            <rect x="54" y="38" width="5" height="24" rx="2.5" fill="rgba(0,0,0,.18)"/>
-            <rect x="66" y="36" width="5" height="28" rx="2.5" fill="rgba(0,0,0,.13)"/>
-            <rect x="89" y="36" width="5" height="28" rx="2.5" fill="rgba(0,0,0,.13)"/>
-            <rect x="101" y="38" width="5" height="24" rx="2.5" fill="rgba(0,0,0,.18)"/>
-
-            <!-- Head -->
-            <rect x="28" y="36" width="104" height="76" rx="20" fill="#1a1a1a"/>
-            <!-- Re-apply cap on top -->
-            <rect x="28" y="36" width="104" height="36" rx="19" fill="#c06540"/>
-            <rect x="28" y="58" width="104" height="16" fill="#9c3826"/>
-            <rect x="54" y="38" width="5" height="22" rx="2.5" fill="rgba(0,0,0,.18)"/>
-            <rect x="66" y="36" width="5" height="22" rx="2.5" fill="rgba(0,0,0,.13)"/>
-            <rect x="89" y="36" width="5" height="22" rx="2.5" fill="rgba(0,0,0,.13)"/>
-            <rect x="101" y="38" width="5" height="22" rx="2.5" fill="rgba(0,0,0,.18)"/>
-
-            <!-- LED Eyes -->
-            <rect x="38" y="72" width="30" height="17" rx="6" fill="#080808"/>
-            <rect x="92" y="72" width="30" height="17" rx="6" fill="#080808"/>
-            <rect x="40" y="74" width="26" height="13" rx="4" fill="#79dac8" class="eye-glow"/>
-            <rect x="94" y="74" width="26" height="13" rx="4" fill="#79dac8" class="eye-glow"/>
-            <!-- scanlines -->
-            <rect x="40" y="79" width="26" height="2.5" rx="1" fill="rgba(0,0,0,.35)"/>
-            <rect x="94" y="79" width="26" height="2.5" rx="1" fill="rgba(0,0,0,.35)"/>
-            <!-- highlights -->
-            <rect x="42" y="75" width="8" height="5" rx="2" fill="white" opacity="0.4"/>
-            <rect x="96" y="75" width="8" height="5" rx="2" fill="white" opacity="0.4"/>
-
-            <!-- Mouth LED strip -->
-            <rect x="44" y="100" width="72" height="9" rx="4.5" fill="#080808"/>
-            <rect x="46" y="102" width="8" height="5" rx="2.5" fill="#d97757" opacity=".9"/>
-            <rect x="57" y="102" width="8" height="5" rx="2.5" fill="#d97757" opacity=".65"/>
-            <rect x="68" y="102" width="8" height="5" rx="2.5" fill="#d97757" opacity=".9"/>
-            <rect x="79" y="102" width="8" height="5" rx="2.5" fill="#d97757" opacity=".5"/>
-            <rect x="90" y="102" width="8" height="5" rx="2.5" fill="#d97757" opacity=".75"/>
-            <rect x="101" y="102" width="8" height="5" rx="2.5" fill="#d97757" opacity=".35"/>
-
-            <!-- Neck -->
-            <rect x="66" y="112" width="28" height="14" rx="6" fill="#1a1a1a"/>
-
-            <!-- Body -->
-            <rect x="18" y="126" width="124" height="96" rx="18" fill="#1a1a1a"/>
-            <rect x="20" y="128" width="120" height="92" rx="16" fill="#222"/>
-            <!-- circuit lines -->
-            <line x1="32" y1="148" x2="128" y2="148" stroke="#79dac8" stroke-width=".8" opacity=".2"/>
-            <circle cx="60" cy="148" r="2.5" fill="#79dac8" opacity=".55"/>
-            <circle cx="100" cy="148" r="2.5" fill="#d97757" opacity=".55"/>
-            <line x1="60" y1="148" x2="60" y2="165" stroke="#79dac8" stroke-width=".8" opacity=".2"/>
-            <line x1="100" y1="148" x2="100" y2="165" stroke="#d97757" stroke-width=".8" opacity=".2"/>
-            <line x1="32" y1="184" x2="128" y2="184" stroke="#79dac8" stroke-width=".8" opacity=".12"/>
-            <!-- cricket seam -->
-            <circle cx="80" cy="168" r="22" stroke="#d97757" stroke-width=".8" opacity=".1"/>
-            <circle cx="80" cy="168" r="15" stroke="#d97757" stroke-width="1.5" opacity=".35"/>
-            <path d="M65 168 Q80 159 95 168" stroke="#d97757" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".55"/>
-            <path d="M65 168 Q80 177 95 168" stroke="#d97757" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".55"/>
-
-            <!-- LEFT ARM — pointing at terminal -->
-            <circle cx="18" cy="140" r="10" fill="#1a1a1a" stroke="#d97757" stroke-width="1" opacity=".5"/>
-            <rect x="2" y="133" width="17" height="40" rx="8.5" fill="#1a1a1a" transform="rotate(-18,10,153)"/>
-            <rect x="-7" y="165" width="15" height="32" rx="7.5" fill="#222" transform="rotate(-30,0,181)"/>
-            <circle cx="-8" cy="197" r="10" fill="#222" stroke="#79dac8" stroke-width="1.5"/>
-            <!-- pointer finger -->
-            <rect x="-14" y="193" width="14" height="7" rx="3.5" fill="#1a1a1a"/>
-            <!-- dashed arrow pointing left (toward terminal) -->
-            <path d="M-22 195 L-38 186" stroke="#d97757" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 3" opacity=".75"/>
-            <path d="M-36 182 L-38 186 L-34 189" stroke="#d97757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".75" fill="none"/>
-
-            <!-- RIGHT ARM — holding cricket bat -->
-            <circle cx="142" cy="140" r="10" fill="#1a1a1a" stroke="#d97757" stroke-width="1" opacity=".5"/>
-            <rect x="141" y="130" width="17" height="44" rx="8.5" fill="#1a1a1a" transform="rotate(22,149,152)"/>
-
-            <!-- Cricket Bat -->
-            <rect x="150" y="76" width="18" height="72" rx="9" fill="#c9a462"/>
-            <rect x="151" y="142" width="16" height="24" rx="4" fill="#7b5c1e"/>
-            <!-- bat highlight -->
-            <rect x="150" y="76" width="4" height="66" rx="2" fill="rgba(255,255,255,.14)"/>
-            <!-- grain lines -->
-            <line x1="156" y1="84" x2="156" y2="140" stroke="rgba(255,255,255,.15)" stroke-width="1.3"/>
-            <line x1="161" y1="84" x2="161" y2="140" stroke="rgba(255,255,255,.15)" stroke-width="1.3"/>
-            <!-- bat brand plate -->
-            <rect x="152" y="104" width="14" height="20" rx="3" fill="rgba(0,0,0,.15)"/>
-            <text x="159" y="118" text-anchor="middle" font-size="9" fill="#d97757" font-family="monospace" opacity=".9">SD</text>
-
-            <!-- LEGS -->
-            <rect x="36" y="222" width="30" height="66" rx="11" fill="#1a1a1a"/>
-            <rect x="94" y="222" width="30" height="66" rx="11" fill="#1a1a1a"/>
-            <!-- knee joints -->
-            <circle cx="51" cy="252" r="5" fill="#222" stroke="#79dac8" stroke-width="1" opacity=".5"/>
-            <circle cx="109" cy="252" r="5" fill="#222" stroke="#d97757" stroke-width="1" opacity=".5"/>
-
-            <!-- BOOTS -->
-            <rect x="22" y="280" width="48" height="16" rx="8" fill="#1a1a1a"/>
-            <rect x="90" y="280" width="48" height="16" rx="8" fill="#1a1a1a"/>
-            <rect x="24" y="281" width="44" height="6" rx="3" fill="#252525"/>
-            <rect x="92" y="281" width="44" height="6" rx="3" fill="#252525"/>
-            <!-- boot terra stripe -->
-            <rect x="22" y="290" width="48" height="6" rx="0 0 8 8" fill="#d97757" opacity=".22"/>
-            <rect x="90" y="290" width="48" height="6" rx="0 0 8 8" fill="#d97757" opacity=".22"/>
-          </svg>
         </div>
       </div>
     </div>
-  </div>
-</section>
+    <div class="scroll-hint">
+      <div class="sh-mouse">
+        <div class="sh-wheel"></div>
+      </div>
+      <span>Scroll</span>
+    </div>
+  </section>
 
-<!-- ═══════════════════════════════════════════
+  <!-- ═══════════════════════════════════
+     ABOUT  —  bio | [terminal + robot sticky]
+═══════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="eyebrow"><span class="ey-line"></span>Who I Am</p>
+        <h2 class="sec-title">A curious mind,<br>always building</h2>
+      </div>
+      <div class="about-grid">
+
+        <!-- Bio -->
+        <div class="about-body reveal">
+          <p>Hello! I'm Sandeep — a B.Tech student in Electronics &amp; Communication Engineering at JIIT Noida,
+            maintaining a CGPA of 9.03. I have a genuine passion for the full spectrum of engineering: from designing
+            circuits in Proteus and writing embedded C to building terminal apps and crafting web interfaces.</p>
+          <p>I believe the best way to learn is to build, break things, and rebuild them better. That philosophy has
+            taken me from blinking LEDs on an Arduino to programming obstacle-avoiding robots, from SQL-powered travel
+            planners to hackathon-born freelancing platforms.</p>
+          <p>When I step away from the desk, you'll find me on the cricket field — where the same values of patience,
+            teamwork, and reading the situation apply just as much as they do in engineering.</p>
+          <div class="tag-row">
+            <span class="chip">Embedded Systems</span><span class="chip">Signal Processing</span>
+            <span class="chip">Circuit Design</span><span class="chip">Software Dev</span>
+            <span class="chip">Open to Internships 🚀</span><span class="chip">Cricket 🏏</span>
+          </div>
+          <div class="about-btns">
+            <a href="Resume.pdf" download class="btn btn-fill btn-sm"><i class="fas fa-download"></i> Download CV</a>
+            <a href="#contact" class="btn btn-ghost btn-sm"><i class="fas fa-envelope"></i> Get in Touch</a>
+          </div>
+        </div>
+
+        <!-- MAC TERMINAL — sticky -->
+        <div class="terminal-sticky-wrap reveal reveal-d1">
+          <div class="terminal-card">
+            <div class="t-bar">
+              <div class="t-dots"><span class="td td-r"></span><span class="td td-y"></span><span
+                  class="td td-g"></span></div>
+              <span class="t-title">sandeep@jiit ~ zsh</span>
+              <span class="t-live"><span class="t-live-dot"></span>LIVE</span>
+            </div>
+            <div class="t-body">
+              <div class="tl"><span class="t-prompt">❯</span><span class="tc">whoami</span></div>
+              <div class="tl to"><span class="tk">Name </span><span class="tv">Sandeep Kumar Mishra</span></div>
+              <div class="tl to"><span class="tk">Role </span><span class="tv">ECE Student · JIIT</span></div>
+              <div class="tl to"><span class="tk">CGPA </span><span class="tv tv-acc">9.03 / 10.0</span></div>
+              <div class="tl to"><span class="tk">Batch </span><span class="tv">2024 – 2028</span></div>
+              <div class="tb"></div>
+              <div class="tl"><span class="t-prompt">❯</span><span class="tc">ls activities/</span></div>
+              <div class="tl to t-dir">μCR_Robotics/&nbsp; BitBox_5.0/&nbsp; Cricket/</div>
+              <div class="tb"></div>
+              <div class="tl"><span class="t-prompt">❯</span><span class="tc">date</span></div>
+              <div class="tl to"><span class="tv t-clk" id="termClock">--</span></div>
+              <div class="tb"></div>
+              <div class="tl"><span class="t-prompt">❯</span><span class="tc">echo $STATUS</span></div>
+              <div class="tl to"><span class="t-open">✦ Open to Internships</span></div>
+              <div class="tb"></div>
+              <div class="tl"><span class="t-prompt">❯</span><span class="t-cur">█</span></div>
+            </div>
+          </div>
+        </div><!-- /terminal-sticky-wrap -->
+
+      </div><!-- /about-grid -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
      EDUCATION
-═══════════════════════════════════════════ -->
-<section id="education">
-  <div class="container">
-    <div class="sec-head reveal">
-      <p class="eyebrow"><span class="eyebrow-line"></span>Academic Journey</p>
-      <h2 class="sec-title">Education &amp; Coursework</h2>
-      <p class="sec-sub">A strong academic foundation combined with a hunger for hands-on learning that goes well beyond the classroom.</p>
-    </div>
-    <div class="edu-grid">
-      <div class="edu-card reveal">
-        <div class="edu-accent"></div>
-        <div class="edu-top">
-          <span class="edu-year">2024 – 2028</span>
-          <span class="edu-score">9.03 <small>/ 10 CGPA</small></span>
+═══════════════════════════════════ -->
+  <section id="education">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="eyebrow"><span class="ey-line"></span>Academic Journey</p>
+        <h2 class="sec-title">Education &amp; Coursework</h2>
+        <p class="sec-sub">A strong academic foundation combined with a hunger for hands-on learning.</p>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <div class="edu-top-bar"></div>
+          <div class="edu-header">
+            <span class="edu-year">2024 – 2028</span>
+            <span class="edu-score">9.03<small> / 10</small></span>
+          </div>
+          <h3>B.Tech — Electronics &amp; Communication Engineering (ACT)</h3>
+          <p class="edu-inst"><i class="fas fa-university"></i> Jaypee Institute of Information Technology (JIIT), Noida
+          </p>
+          <div class="pills">
+            <span class="pill">Telecom Engineering</span><span class="pill">Digital Signal Processing</span>
+            <span class="pill">Analog &amp; Digital Comm.</span><span class="pill">Artificial Intelligence</span>
+            <span class="pill">Signals &amp; Systems</span><span class="pill">Linear Algebra</span>
+            <span class="pill">Financial Accounting</span>
+          </div>
         </div>
-        <h3>B.Tech — Electronics &amp; Communication Engineering (ACT)</h3>
-        <p class="edu-inst"><i class="fas fa-university"></i> Jaypee Institute of Information Technology (JIIT), Noida</p>
-        <div class="course-pills">
-          <span class="cpill">Telecom Engineering</span>
-          <span class="cpill">Digital Signal Processing</span>
-          <span class="cpill">Analog &amp; Digital Comm.</span>
-          <span class="cpill">Artificial Intelligence</span>
-          <span class="cpill">Signals &amp; Systems</span>
-          <span class="cpill">Linear Algebra</span>
-          <span class="cpill">Financial Accounting</span>
+        <div class="edu-card reveal reveal-d1">
+          <div class="edu-top-bar"></div>
+          <div class="edu-header"><span class="edu-year">April 2024</span></div>
+          <h3>Senior Secondary &amp; Secondary Education</h3>
+          <p class="edu-inst"><i class="fas fa-school"></i> Kendriya Vidyalaya, Noida</p>
+          <div class="pills">
+            <span class="pill">Python</span><span class="pill">MySQL</span><span class="pill">RDBMS</span>
+          </div>
+          <div class="score-pair">
+            <div class="sc"><span class="sc-n">86%</span><span class="sc-l">Class 12th</span></div>
+            <div class="sc"><span class="sc-n">89.5%</span><span class="sc-l">Class 10th</span></div>
+          </div>
         </div>
       </div>
-      <div class="edu-card reveal reveal-d1">
-        <div class="edu-accent"></div>
-        <div class="edu-top"><span class="edu-year">April 2024</span></div>
-        <h3>Senior Secondary &amp; Secondary Education</h3>
-        <p class="edu-inst"><i class="fas fa-school"></i> Kendriya Vidyalaya, Noida</p>
-        <div class="course-pills">
-          <span class="cpill">Python</span><span class="cpill">MySQL</span><span class="cpill">RDBMS</span>
-        </div>
-        <div class="score-pair">
-          <div class="score-block"><span class="score-n">86%</span><span class="score-l">Class 12th</span></div>
-          <div class="score-block"><span class="score-n">89.5%</span><span class="score-l">Class 10th</span></div>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════════
+  <!-- ═══════════════════════════════════
      PROJECTS
-═══════════════════════════════════════════ -->
-<section id="projects">
-  <div class="container">
-    <div class="sec-head reveal">
-      <p class="eyebrow"><span class="eyebrow-line"></span>What I've Built</p>
-      <h2 class="sec-title">Projects &amp; Work</h2>
-      <p class="sec-sub">A selection of things I've built, shipped, and learned from — spanning hardware, software, and everything in between.</p>
-    </div>
-    <div class="proj-grid">
-      <div class="proj-card proj-featured reveal">
-        <div class="proj-content">
-          <div class="proj-hdr">
-            <span class="badge b-hw"><i class="fas fa-microchip"></i> Hardware</span>
-            <a href="#" class="proj-link-ico"><i class="fab fa-github"></i></a>
+═══════════════════════════════════ -->
+  <section id="projects">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="eyebrow"><span class="ey-line"></span>What I've Built</p>
+        <h2 class="sec-title">Projects &amp; Work</h2>
+        <p class="sec-sub">Things I've built, shipped, and learned from — spanning hardware, software, and everything in
+          between.</p>
+      </div>
+      <div class="proj-grid">
+        <div class="proj-card proj-feat reveal">
+          <div class="pc-content">
+            <div class="pc-hdr"><span class="badge b-hw"><i class="fas fa-microchip"></i> Hardware</span><a href="#"
+                class="pc-ico"><i class="fab fa-github"></i></a></div>
+            <h3>Arduino-Based Embedded Systems</h3>
+            <p>A hands-on series of embedded projects: obstacle-avoidance robot, real-time temperature monitor, and LED
+              control circuits — powered by ultrasonic, LM35, and IR sensors.</p>
+            <div class="tech-row">
+              <span class="tp">Arduino</span><span class="tp">C / C++</span><span class="tp">Ultrasonic</span><span
+                class="tp">LM35</span><span class="tp">Proteus</span>
+            </div>
           </div>
-          <h3>Arduino-Based Embedded Systems</h3>
-          <p>A hands-on series of embedded projects: an obstacle-avoidance robot, a real-time temperature monitor, and LED control circuits — powered by ultrasonic, LM35, and IR sensors doing real-time data processing.</p>
-          <div class="tech-row">
-            <span class="tpill">Arduino</span><span class="tpill">C / C++</span>
-            <span class="tpill">Ultrasonic</span><span class="tpill">LM35</span>
-            <span class="tpill">IR Module</span><span class="tpill">Proteus</span>
+          <div class="pc-visual">
+            <img src="arduino.jpeg" alt="Arduino board" class="pc-img"
+              onerror="this.style.display='none';document.getElementById('pcImgFb').style.display='flex';" />
+            <div class="pc-img-fb" id="pcImgFb">
+              <span class="pc-emoji">🤖</span>
+              <p class="fb-hint"><i class="fas fa-image"></i><br>Add <strong>arduino.jpeg</strong></p>
+            </div>
           </div>
         </div>
-        <div class="proj-visual"><span class="proj-emoji">🤖</span></div>
-      </div>
 
-      <div class="proj-card reveal">
-        <div class="proj-hdr">
-          <span class="badge b-sw"><i class="fas fa-terminal"></i> Software</span>
-          <a href="#" class="proj-link-ico"><i class="fab fa-github"></i></a>
+        <div class="proj-card reveal">
+          <div class="pc-hdr"><span class="badge b-sw"><i class="fas fa-terminal"></i> Software</span><a href="#"
+              class="pc-ico"><i class="fab fa-github"></i></a></div>
+          <h3>Plan My Journey</h3>
+          <p>Terminal-based travel planner in C++ with a MySQL backend. Users manage routes, destinations, and trip
+            details with full database persistence.</p>
+          <div class="tech-row"><span class="tp">C++</span><span class="tp">MySQL</span><span class="tp">CLI</span>
+          </div>
         </div>
-        <h3>Plan My Journey</h3>
-        <p>A terminal-based travel planner in C++ with a MySQL backend. Users manage routes, destinations, and trip details with full database persistence — clean, fast, no-frills.</p>
-        <div class="tech-row">
-          <span class="tpill">C++</span><span class="tpill">MySQL</span><span class="tpill">CLI</span>
-        </div>
-      </div>
 
-      <div class="proj-card reveal reveal-d1">
-        <div class="proj-hdr">
-          <span class="badge b-wip"><i class="fas fa-spinner fa-spin"></i> In Progress</span>
+        <div class="proj-card reveal reveal-d1">
+          <div class="pc-hdr"><span class="badge b-wip"><i class="fas fa-spinner fa-spin"></i> In Progress</span></div>
+          <h3>Accounting Application</h3>
+          <p>Automatically generates Journal Entries, Ledgers, and Trial Balances — turning complex accounting into a
+            smooth workflow.</p>
+          <div class="tech-row"><span class="tp">In Development</span><span class="tp">Finance Logic</span></div>
         </div>
-        <h3>Accounting Application</h3>
-        <p>Making financial record-keeping approachable for everyone. Automatically generates Journal Entries, Ledgers, and Trial Balances.</p>
-        <div class="tech-row">
-          <span class="tpill">In Development</span><span class="tpill">Finance Logic</span>
-        </div>
-      </div>
 
-      <div class="proj-card proj-wide reveal">
-        <div class="proj-hdr">
-          <span class="badge b-hk"><i class="fas fa-trophy"></i> Hackathon · BitBox 5.0</span>
-          <a href="#" class="proj-link-ico"><i class="fas fa-external-link-alt"></i></a>
-        </div>
-        <h3>Freelancing Platform</h3>
-        <p>Built collaboratively at the BitBox 5.0 Hackathon — a fully functional freelancing website designed and shipped under real time pressure. A great lesson in teamwork, speed, and deciding what to cut when the clock is ticking.</p>
-        <div class="tech-row">
-          <span class="tpill">HTML / CSS</span><span class="tpill">JavaScript</span>
-          <span class="tpill">Rapid Prototyping</span><span class="tpill">Teamwork</span>
+        <div class="proj-card proj-wide reveal">
+          <div class="pc-hdr"><span class="badge b-hk"><i class="fas fa-trophy"></i> Hackathon · BitBox 5.0</span><a
+              href="#" class="pc-ico"><i class="fas fa-external-link-alt"></i></a></div>
+          <h3>Freelancing Platform</h3>
+          <p>Built collaboratively at the BitBox 5.0 Hackathon — a fully functional freelancing website designed and
+            shipped under real time pressure. A great lesson in teamwork and speed.</p>
+          <div class="tech-row"><span class="tp">HTML / CSS</span><span class="tp">JavaScript</span><span
+              class="tp">Rapid Prototyping</span></div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════════
+  <!-- ═══════════════════════════════════
      SKILLS
-═══════════════════════════════════════════ -->
-<section id="skills">
-  <div class="container">
-    <div class="sec-head reveal">
-      <p class="eyebrow"><span class="eyebrow-line"></span>What I Work With</p>
-      <h2 class="sec-title">Skills &amp; Tools</h2>
-      <p class="sec-sub">A growing toolkit that bridges the gap between hardware and software.</p>
-    </div>
-    <div class="skills-layout">
-      <div class="skills-grid">
-        <div class="skill-card reveal"      data-tip="Systems & Embedded"><div class="sk-icon-wrap sk-cpp"><i class="fas fa-code"></i></div><p class="sk-name">C / C++</p><p class="sk-cat">Systems &amp; Embedded</p></div>
-        <div class="skill-card reveal rd1"  data-tip="Scripting & AI/ML"><div class="sk-icon-wrap sk-python"><i class="fab fa-python"></i></div><p class="sk-name">Python</p><p class="sk-cat">Scripting &amp; AI/ML</p></div>
-        <div class="skill-card reveal rd2"  data-tip="Frontend Web"><div class="sk-icon-wrap sk-html"><i class="fab fa-html5"></i></div><p class="sk-name">HTML / CSS</p><p class="sk-cat">Frontend Web</p></div>
-        <div class="skill-card reveal rd3"  data-tip="Interactivity"><div class="sk-icon-wrap sk-js"><i class="fab fa-js"></i></div><p class="sk-name">JavaScript</p><p class="sk-cat">Interactivity</p></div>
-        <div class="skill-card reveal"      data-tip="Signal Processing"><div class="sk-icon-wrap sk-matlab"><i class="fas fa-wave-square"></i></div><p class="sk-name">MATLAB</p><p class="sk-cat">Signal Processing</p></div>
-        <div class="skill-card reveal rd1"  data-tip="Circuit Simulation"><div class="sk-icon-wrap sk-proteus"><i class="fas fa-microchip"></i></div><p class="sk-name">Proteus</p><p class="sk-cat">Circuit Simulation</p></div>
-        <div class="skill-card reveal rd2"  data-tip="Machine Learning"><div class="sk-icon-wrap sk-ai"><i class="fas fa-brain"></i></div><p class="sk-name">AI / ML</p><p class="sk-cat">Machine Learning</p></div>
-        <div class="skill-card reveal rd3"  data-tip="Databases"><div class="sk-icon-wrap sk-mysql"><i class="fas fa-database"></i></div><p class="sk-name">MySQL</p><p class="sk-cat">Databases</p></div>
+═══════════════════════════════════ -->
+  <section id="skills">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="eyebrow"><span class="ey-line"></span>What I Work With</p>
+        <h2 class="sec-title">Skills &amp; Tools</h2>
+        <p class="sec-sub">A growing toolkit bridging hardware and software.</p>
       </div>
-      <div class="skills-aside">
-        <div class="aside-block reveal">
-          <h4><i class="fas fa-compass"></i> Areas of Interest</h4>
-          <ul>
-            <li>Embedded Systems</li><li>Signal Processing</li>
-            <li>Software Development</li><li>Circuit Design</li>
-          </ul>
+      <div class="skills-layout">
+        <div class="skills-grid">
+          <div class="sk-card reveal" data-tip="Systems & Embedded">
+            <div class="sk-ico ico-cpp"><i class="fas fa-code"></i></div>
+            <p class="sk-n">C / C++</p>
+            <p class="sk-c">Systems</p>
+          </div>
+          <div class="sk-card reveal rd1" data-tip="Scripting & AI">
+            <div class="sk-ico ico-py"><i class="fab fa-python"></i></div>
+            <p class="sk-n">Python</p>
+            <p class="sk-c">Scripting</p>
+          </div>
+          <div class="sk-card reveal rd2" data-tip="Frontend Web">
+            <div class="sk-ico ico-html"><i class="fab fa-html5"></i></div>
+            <p class="sk-n">HTML/CSS</p>
+            <p class="sk-c">Frontend</p>
+          </div>
+          <div class="sk-card reveal rd3" data-tip="Interactivity">
+            <div class="sk-ico ico-js"><i class="fab fa-js"></i></div>
+            <p class="sk-n">JavaScript</p>
+            <p class="sk-c">Logic</p>
+          </div>
+          <div class="sk-card reveal" data-tip="Signal Processing">
+            <div class="sk-ico ico-mat"><i class="fas fa-wave-square"></i></div>
+            <p class="sk-n">MATLAB</p>
+            <p class="sk-c">DSP</p>
+          </div>
+          <div class="sk-card reveal rd1" data-tip="Circuit Simulation">
+            <div class="sk-ico ico-prot"><i class="fas fa-microchip"></i></div>
+            <p class="sk-n">Proteus</p>
+            <p class="sk-c">Circuits</p>
+          </div>
+          <div class="sk-card reveal rd2" data-tip="Machine Learning">
+            <div class="sk-ico ico-ai"><i class="fas fa-brain"></i></div>
+            <p class="sk-n">AI / ML</p>
+            <p class="sk-c">ML Basics</p>
+          </div>
+          <div class="sk-card reveal rd3" data-tip="Relational DB">
+            <div class="sk-ico ico-sql">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-label="MySQL">
+                <path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.697-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.41.877.615 1.583.615.264 0 .506-.033.725-.098l1.325.772.36-.622zM15.5 17.588c-.225-.36-.337-.94-.337-1.736 0-1.393.424-2.09 1.27-2.09.443 0 .77.167.977.5.224.362.336.936.336 1.723 0 1.404-.424 2.108-1.27 2.108-.445 0-.77-.167-.978-.5zm-1.658-.425c0 .47-.172.856-.516 1.156-.344.3-.803.45-1.384.45-.543 0-1.064-.172-1.573-.515l.237-.476c.438.22.833.328 1.19.328.332 0 .593-.073.783-.22a.754.754 0 00.3-.615c0-.33-.23-.61-.648-.845-.388-.213-1.163-.657-1.163-.657-.422-.307-.632-.636-.632-1.177 0-.45.157-.81.47-1.085.315-.278.72-.415 1.22-.415.512 0 .98.136 1.4.41l-.213.476a2.726 2.726 0 00-1.064-.23c-.283 0-.502.068-.654.206a.685.685 0 00-.248.524c0 .328.234.61.666.85.393.215 1.187.67 1.187.67.433.305.648.63.648 1.168zm9.382-5.852c-.535-.014-.95.04-1.297.188-.1.04-.26.04-.274.167.055.053.063.14.11.214.08.134.218.313.346.407.14.11.28.216.427.31.26.16.555.255.81.416.145.094.293.213.44.313.073.05.12.14.214.172v-.02c-.046-.06-.06-.147-.105-.214-.067-.067-.134-.127-.2-.193a3.223 3.223 0 00-.695-.675c-.214-.146-.682-.35-.77-.595l-.013-.014c.146-.013.32-.066.46-.106.227-.06.435-.047.67-.106.106-.027.213-.06.32-.094v-.06c-.12-.12-.21-.283-.334-.395a8.867 8.867 0 00-1.104-.823c-.21-.134-.476-.22-.697-.334-.08-.04-.214-.06-.26-.127-.12-.146-.19-.34-.275-.514a17.69 17.69 0 01-.547-1.163c-.12-.262-.193-.523-.34-.763-.69-1.137-1.437-1.826-2.586-2.5-.247-.14-.543-.2-.856-.274-.167-.008-.334-.02-.5-.027-.11-.047-.216-.174-.31-.235-.38-.24-1.364-.76-1.644-.072-.18.434.267.862.422 1.082.115.153.26.328.34.5.047.116.06.235.107.356.106.294.207.622.347.897.073.14.153.287.247.413.054.073.146.107.167.227-.094.136-.1.334-.154.5-.24.757-.146 1.693.194 2.25.107.166.362.534.703.393.3-.12.234-.5.32-.835.02-.08.007-.133.048-.187v.015c.094.188.188.367.274.555.206.328.566.668.867.895.16.12.287.328.487.402v-.02h-.015c-.043-.058-.1-.086-.154-.133a3.445 3.445 0 01-.35-.4 8.76 8.76 0 01-.747-1.218c-.11-.21-.202-.436-.29-.643-.04-.08-.04-.2-.107-.24-.1.146-.247.273-.32.453-.127.288-.14.642-.188 1.01-.027.007-.014 0-.027.014-.214-.052-.287-.274-.367-.46-.2-.475-.233-1.238-.06-1.785.047-.14.247-.582.167-.716-.042-.127-.174-.2-.247-.303a2.478 2.478 0 01-.24-.427c-.16-.374-.24-.788-.414-1.162-.08-.173-.22-.354-.334-.513-.127-.18-.267-.307-.368-.52-.033-.073-.08-.194-.027-.274.014-.054.042-.075.094-.09.088-.072.335.022.422.062.247.1.455.194.662.334.094.066.195.193.315.226h.14c.214.047.455.014.655.073.355.114.675.28.962.46a5.953 5.953 0 012.085 2.286c.08.154.115.295.188.455.14.33.313.663.455.982.14.315.275.636.476.897.1.14.502.213.682.286.133.06.34.115.46.188.23.14.454.3.67.454.11.076.443.243.463.378z"/>
+              </svg>
+            </div>
+            <p class="sk-n">MySQL</p>
+            <p class="sk-c">Databases</p>
+          </div>
         </div>
-        <div class="aside-block reveal rd2">
-          <h4><i class="fas fa-star"></i> Activities</h4>
-          <ul>
-            <li>Campus Robotics Club (μCR)</li>
-            <li>BitBox 5.0 Hackathon</li>
-            <li>Cricket Enthusiast 🏏</li>
-          </ul>
+        <div class="sk-aside">
+          <div class="sk-aside-block reveal">
+            <h4><i class="fas fa-compass"></i> Interests</h4>
+            <ul>
+              <li>Embedded Systems</li>
+              <li>Signal Processing</li>
+              <li>Software Development</li>
+              <li>Circuit Design</li>
+            </ul>
+          </div>
+          <div class="sk-aside-block reveal rd2">
+            <h4><i class="fas fa-star"></i> Activities</h4>
+            <ul>
+              <li>Campus Robotics (μCR)</li>
+              <li>BitBox 5.0 Hackathon</li>
+              <li>Cricket Enthusiast 🏏</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════════
-     CONTACT  —  light theme
-═══════════════════════════════════════════ -->
-<section id="contact">
-  <div class="contact-bg-word" aria-hidden="true">HELLO</div>
-  <!-- decorative blobs -->
-  <div class="ct-blob ct-blob-a"></div>
-  <div class="ct-blob ct-blob-b"></div>
-
-  <div class="container">
-    <div class="contact-head reveal">
-      <p class="eyebrow eyebrow-center"><span class="eyebrow-line"></span>Let's Talk<span class="eyebrow-line"></span></p>
-      <h2 class="sec-title" style="text-align:center;">Open to opportunities &amp;<br>interesting conversations</h2>
-      <p class="contact-intro">Whether you have a project idea, an internship opportunity, or just want to say hello — I'd love to hear from you.</p>
+  <!-- ═══════════════════════════════════
+     CONTACT  —  light vibrant
+═══════════════════════════════════ -->
+  <section id="contact">
+    <div class="ct-bg-word">HELLO</div>
+    <div class="ct-blob-a"></div>
+    <div class="ct-blob-b"></div>
+    <div class="container">
+      <div class="ct-head reveal">
+        <p class="eyebrow eyebrow-c"><span class="ey-line"></span>Let's Talk<span class="ey-line"></span></p>
+        <h2 class="sec-title" style="text-align:center">Open to opportunities &amp;<br>interesting conversations</h2>
+        <p class="ct-intro">Whether you have a project idea, an internship opportunity, or just want to say hello — I'd
+          love to hear from you.</p>
+      </div>
+      <div class="ct-cards reveal">
+        <a href="mailto:sandeep28092006@gmail.com" class="ct-card">
+          <div class="ct-ico ct-email"><i class="fas fa-envelope"></i></div>
+          <div class="ct-txt"><span class="ct-label">Email</span><span class="ct-val">sandeep28092006@gmail.com</span>
+          </div>
+          <i class="fas fa-arrow-right ct-arr"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/sandeep-kumar-mishra-7628b6308/" target="_blank" class="ct-card">
+          <div class="ct-ico ct-li"><i class="fab fa-linkedin-in"></i></div>
+          <div class="ct-txt"><span class="ct-label">LinkedIn</span><span class="ct-val">Connect with me</span></div>
+          <i class="fas fa-arrow-right ct-arr"></i>
+        </a>
+        <a href="https://github.com/sandeepkm45" target="_blank" class="ct-card">
+          <div class="ct-ico ct-gh"><i class="fab fa-github"></i></div>
+          <div class="ct-txt"><span class="ct-label">GitHub</span><span class="ct-val">@sandeepkm45</span></div>
+          <i class="fas fa-arrow-right ct-arr"></i>
+        </a>
+        <a href="tel:+918076333070" class="ct-card">
+          <div class="ct-ico ct-ph"><i class="fas fa-phone"></i></div>
+          <div class="ct-txt"><span class="ct-label">Phone</span><span class="ct-val">+91 8076333070</span></div>
+          <i class="fas fa-arrow-right ct-arr"></i>
+        </a>
+      </div>
+      <div class="ct-cta reveal">
+        <a href="mailto:sandeep28092006@gmail.com" class="btn btn-fill btn-lg">
+          <i class="fas fa-paper-plane"></i> Say Hello
+        </a>
+        <p class="ct-note">Usually replies within 24 hours ✨</p>
+      </div>
     </div>
+  </section>
 
-    <div class="contact-cards reveal">
-      <a href="mailto:sandeep28092006@gmail.com" class="cc-card">
-        <div class="cc-icon cc-email"><i class="fas fa-envelope"></i></div>
-        <div class="cc-text"><span class="cc-label">Email</span><span class="cc-value">sandeep28092006@gmail.com</span></div>
-        <i class="fas fa-arrow-right cc-arrow"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/sandeep-kumar-mishra-7628b6308/" target="_blank" class="cc-card">
-        <div class="cc-icon cc-li"><i class="fab fa-linkedin-in"></i></div>
-        <div class="cc-text"><span class="cc-label">LinkedIn</span><span class="cc-value">Connect with me</span></div>
-        <i class="fas fa-arrow-right cc-arrow"></i>
-      </a>
-      <a href="https://github.com/sandeepkm45" target="_blank" class="cc-card">
-        <div class="cc-icon cc-gh"><i class="fab fa-github"></i></div>
-        <div class="cc-text"><span class="cc-label">GitHub</span><span class="cc-value">@sandeepkm45</span></div>
-        <i class="fas fa-arrow-right cc-arrow"></i>
-      </a>
-      <a href="tel:+918076333070" class="cc-card">
-        <div class="cc-icon cc-ph"><i class="fas fa-phone"></i></div>
-        <div class="cc-text"><span class="cc-label">Phone</span><span class="cc-value">+91 8076333070</span></div>
-        <i class="fas fa-arrow-right cc-arrow"></i>
-      </a>
-    </div>
+  <footer>
+    <p>© <span id="yr"></span> <span class="fa">Sandeep Kumar Mishra</span> &nbsp;·&nbsp; Crafted with curiosity &amp;
+      coffee ☕</p>
+  </footer>
 
-    <div class="contact-cta reveal">
-      <a href="mailto:sandeep28092006@gmail.com" class="btn btn-fill btn-cta">
-        <i class="fas fa-paper-plane"></i> Say Hello
-      </a>
-      <p class="cta-note">Usually replies within 24 hours ✨</p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>© <span id="fyear"></span> <span class="f-accent">Sandeep Kumar Mishra</span> &nbsp;·&nbsp; Crafted with curiosity &amp; coffee ☕</p>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
