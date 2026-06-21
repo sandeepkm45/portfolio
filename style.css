@@ -24,6 +24,8 @@
   --t: .26s ease;
   --sh: 0 4px 28px rgba(20, 20, 19, .09);
   --sh2: 0 20px 56px rgba(20, 20, 19, .14);
+  --sh-warm: 0 6px 18px rgba(20, 20, 19, .07), 0 22px 54px rgba(217, 119, 87, .2);
+  --sh-gold: 0 4px 14px rgba(20, 20, 19, .06), 0 14px 38px rgba(227, 169, 72, .24);
   --fd: 'Space Grotesk', sans-serif;
   --fb: 'Plus Jakarta Sans', sans-serif;
   --fm: 'JetBrains Mono', monospace;
@@ -48,6 +50,19 @@ body {
   color: var(--ink);
   line-height: 1.65;
   overflow-x: hidden
+}
+
+/* faint paper grain — sits above every section for a warmer, tactile feel */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+  pointer-events: none;
+  opacity: .045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }
 
 ::-webkit-scrollbar {
@@ -955,14 +970,16 @@ nav#navbar.sc .nav-inner {
 }
 
 .btn-fill {
-  background: linear-gradient(135deg, var(--terra), var(--tdk));
+  background: linear-gradient(135deg, var(--terra) 0%, #e0875f 50%, var(--gold-dk) 100%);
   color: var(--white);
-  border-color: var(--terra)
+  border-color: var(--terra);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22)
 }
 
 .btn-fill:hover {
-  box-shadow: 0 12px 30px rgba(217, 119, 87, .45);
-  filter: brightness(1.08)
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .28), 0 14px 34px rgba(217, 119, 87, .48);
+  filter: brightness(1.05);
+  transform: translateY(-2px)
 }
 
 .btn-ghost {
@@ -1010,7 +1027,7 @@ nav#navbar.sc .nav-inner {
   font-family: var(--fd);
   font-size: 2rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--terra), var(--gold));
+  background: linear-gradient(135deg, var(--terra) 0%, #e8956a 50%, var(--gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1046,6 +1063,17 @@ nav#navbar.sc .nav-inner {
   align-items: center;
   justify-content: center;
   animation: floatY 5s ease-in-out infinite
+}
+
+.photo-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -18%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(227, 169, 72, .45) 0%, rgba(217, 119, 87, .26) 40%, transparent 72%);
+  filter: blur(30px);
+  z-index: 0;
+  animation: lampGlow 4.5s ease-in-out infinite
 }
 
 .ph-ring {
@@ -1471,14 +1499,15 @@ section {
 }
 
 .t-open {
-  color: #9993ea;
+  color: var(--gold);
   font-weight: 600;
   font-size: .77rem;
-  background: #9333ea1f;
-  border: #8600ff00;
+  background: rgba(227, 169, 72, .12);
+  border: 1px solid rgba(227, 169, 72, .3);
   padding: .18rem .65rem;
   border-radius: 50px;
   letter-spacing: .03em;
+  animation: openGlow 2.4s ease-in-out infinite
 }
 
 .t-cur {
@@ -1533,7 +1562,7 @@ section {
 }
 
 .edu-card:hover {
-  box-shadow: var(--sh2);
+  box-shadow: var(--sh-warm);
   transform: translateY(-5px);
   border-color: rgba(217, 119, 87, .18)
 }
@@ -1564,7 +1593,7 @@ section {
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: -.01em;
-  background: linear-gradient(135deg, var(--terra), var(--gold));
+  background: linear-gradient(135deg, var(--terra) 0%, #e8956a 50%, var(--gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1635,7 +1664,7 @@ section {
   font-size: 1.9rem;
   font-weight: 700;
   letter-spacing: -.01em;
-  background: linear-gradient(135deg, var(--terra), var(--gold));
+  background: linear-gradient(135deg, var(--terra) 0%, #e8956a 50%, var(--gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1706,7 +1735,7 @@ section {
 }
 
 .proj-card:hover {
-  box-shadow: 0 20px 58px rgba(20, 20, 19, .14);
+  box-shadow: var(--sh-warm);
   transform: translateY(-5px);
   border-color: rgba(217, 119, 87, .16)
 }
@@ -1938,7 +1967,7 @@ section {
 }
 
 .sk-card:hover {
-  box-shadow: 0 14px 38px rgba(227, 169, 72, .2)
+  box-shadow: var(--sh-gold)
 }
 
 .sk-card:hover::after {
@@ -1959,6 +1988,38 @@ section {
 
 .sk-card:hover .sk-ico {
   transform: rotate(-6deg) scale(1.1)
+}
+
+.sk-card:hover .ico-cpp {
+  box-shadow: 0 10px 22px rgba(0, 102, 204, .38)
+}
+
+.sk-card:hover .ico-py {
+  box-shadow: 0 10px 22px rgba(55, 118, 171, .38)
+}
+
+.sk-card:hover .ico-html {
+  box-shadow: 0 10px 22px rgba(227, 79, 38, .38)
+}
+
+.sk-card:hover .ico-js {
+  box-shadow: 0 10px 22px rgba(247, 223, 30, .45)
+}
+
+.sk-card:hover .ico-mat {
+  box-shadow: 0 10px 22px rgba(0, 186, 238, .38)
+}
+
+.sk-card:hover .ico-prot {
+  box-shadow: 0 10px 22px rgba(217, 119, 87, .42)
+}
+
+.sk-card:hover .ico-ai {
+  box-shadow: 0 10px 22px rgba(168, 85, 247, .38)
+}
+
+.sk-card:hover .ico-sql {
+  box-shadow: 0 10px 22px rgba(242, 145, 17, .38)
 }
 
 .ico-cpp {
@@ -2235,7 +2296,7 @@ section {
 }
 
 .ct-card:hover {
-  box-shadow: 0 16px 48px rgba(20, 20, 19, .14);
+  box-shadow: var(--sh-warm);
   transform: translateY(-4px);
   border-color: rgba(217, 119, 87, .18);
   background: var(--white)
@@ -2528,6 +2589,32 @@ footer p {
   50% {
     transform: scale(1.1);
     opacity: .7
+  }
+}
+
+@keyframes lampGlow {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: .85
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1
+  }
+}
+
+@keyframes openGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(227, 169, 72, 0)
+  }
+
+  50% {
+    box-shadow: 0 0 10px 1px rgba(227, 169, 72, .3)
   }
 }
 
